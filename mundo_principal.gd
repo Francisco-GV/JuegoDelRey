@@ -24,8 +24,17 @@ func actualizar_etiqueta_dinero() -> void:
 
 
 func actualizar_posicion_boton(personaje: Sprite3D, boton: Button) -> void:
-	var offset_cabeza := Vector3(0, 2.0, 0)
+	var offset_y: float = 0.0
 
+	if personaje.texture:
+		var altura_textura: float = personaje.texture.get_height()
+		var pixel_size: float = personaje.pixel_size
+		var escala_y: float = personaje.scale.y
+
+		offset_y = (altura_textura * pixel_size / 2.0) * escala_y
+		offset_y += 0.5
+
+	var offset_cabeza := Vector3(0, offset_y, 0)
 	var pos_cabeza_3d: Vector3 = personaje.global_transform.origin + offset_cabeza
 	var pos_pantalla_2d: Vector2 = camara.unproject_position(pos_cabeza_3d)
 
