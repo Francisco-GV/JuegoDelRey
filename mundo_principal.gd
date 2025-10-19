@@ -2,14 +2,34 @@ extends Node3D
 
 @export var dinero_rey: int = 20
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
+@onready var camara: Camera3D = $Camera3D
+
+# Sprites 3D
+@onready var rol_madre: Sprite3D = $RolMadre
+
+# Botones
+@onready var btn_madre: Button = $UI/Control/BtnMadre
 
 
 func _ready() -> void:
 	actualizar_etiqueta_dinero()
 
 
+func _process(_delta: float) -> void:
+	actualizar_posicion_boton(rol_madre, btn_madre)
+
+
 func actualizar_etiqueta_dinero() -> void:
 	etiqueta_contador.text = "Dinero Restante: " + str(dinero_rey)
+
+
+func actualizar_posicion_boton(personaje: Sprite3D, boton: Button) -> void:
+	var offset_cabeza := Vector3(0, 2.0, 0)
+
+	var pos_cabeza_3d: Vector3 = personaje.global_transform.origin + offset_cabeza
+	var pos_pantalla_2d: Vector2 = camara.unproject_position(pos_cabeza_3d)
+
+	boton.global_position = pos_pantalla_2d - (boton.size / 2.0)
 
 
 func _on_btn_madre_pressed() -> void:

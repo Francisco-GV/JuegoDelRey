@@ -68,10 +68,10 @@ text = "Dinero Restante: 20"
 
 [node name="BtnMadre" type="Button" parent="UI/Control"]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 240.0
-offset_right = 355.0
-offset_bottom = 275.0
+offset_left = 200.0
+offset_top = 400.0
+offset_right = 235.0
+offset_bottom = 435.0
 text = "+"
 
 [connection signal="pressed" from="UI/Control/BtnMadre" to="." method="_on_btn_madre_pressed"]
