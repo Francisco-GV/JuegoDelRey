@@ -47,3 +47,19 @@ texture = ExtResource("1_3j017")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.89, 0)
 billboard = 2
 texture = ExtResource("1_3j017")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ContadorDinero" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 172.0
+offset_bottom = 43.0
+text = "Dinero Restante: 20"
