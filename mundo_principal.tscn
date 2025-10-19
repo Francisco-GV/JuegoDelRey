@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=3 format=3 uid="uid://1l03d6grnj10"]
 
 [ext_resource type="Texture2D" uid="uid://bqeeksjiuolcf" path="res://icon.svg" id="1_3j017"]
+[ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 
 [node name="MundoPrincipal" type="Node3D"]
+script = ExtResource("1_226u2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 size = Vector3(20, 0.5, 20)
