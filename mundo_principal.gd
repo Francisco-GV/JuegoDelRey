@@ -32,13 +32,16 @@ func actualizar_posicion_boton(personaje: Sprite3D, boton: Button) -> void:
 		var escala_y: float = personaje.scale.y
 
 		offset_y = (altura_textura * pixel_size / 2.0) * escala_y
-		offset_y += 0.5
 
 	var offset_cabeza := Vector3(0, offset_y, 0)
 	var pos_cabeza_3d: Vector3 = personaje.global_transform.origin + offset_cabeza
 	var pos_pantalla_2d: Vector2 = camara.unproject_position(pos_cabeza_3d)
 
-	boton.global_position = pos_pantalla_2d - (boton.size / 2.0)
+	var margen_vertical: float = 5.0
+	var pos_final_x: float = pos_pantalla_2d.x - (boton.size.x / 2.0)
+	var pos_final_y: float = pos_pantalla_2d.y - boton.size.y - margen_vertical
+
+	boton.global_position = Vector2(pos_final_x, pos_final_y)
 
 
 func _on_btn_madre_pressed() -> void:
