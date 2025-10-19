@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=2 format=3 uid="uid://1l03d6grnj10"]
+
+[ext_resource type="Texture2D" uid="uid://bqeeksjiuolcf" path="res://icon.svg" id="1_3j017"]
 
 [node name="MundoPrincipal" type="Node3D"]
 
@@ -10,3 +12,8 @@ transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+
+[node name="PersonajePrueba" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 2
+texture = ExtResource("1_3j017")
