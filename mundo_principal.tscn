@@ -122,10 +122,10 @@ offset_right = 955.0
 offset_bottom = 435.0
 text = "+"
 
-[connection signal="pressed" from="UI/Control/BtnMadre" to="." method="_on_btn_madre_pressed"]
-[connection signal="pressed" from="UI/Control/BtnAnciano" to="." method="_on_btn_anciano_pressed"]
-[connection signal="pressed" from="UI/Control/BtnNinoPobre" to="." method="_on_btn_nino_pobre_pressed"]
-[connection signal="pressed" from="UI/Control/BtnMujerTrabajadora" to="." method="_on_btn_mujer_trabajadora_pressed"]
-[connection signal="pressed" from="UI/Control/BtnJoven" to="." method="_on_btn_joven_pressed"]
-[connection signal="pressed" from="UI/Control/BtnNinoDiscapacitado" to="." method="_on_btn_nino_discapacitado_pressed"]
-[connection signal="pressed" from="UI/Control/BtnPerro" to="." method="_on_btn_perro_pressed"]
+[connection signal="pressed" from="UI/Control/BtnMadre" to="." method="repartir_dinero" binds= ["Madre"]]
+[connection signal="pressed" from="UI/Control/BtnAnciano" to="." method="repartir_dinero" binds= ["Anciano"]]
+[connection signal="pressed" from="UI/Control/BtnNinoPobre" to="." method="repartir_dinero" binds= ["NinoPobre"]]
+[connection signal="pressed" from="UI/Control/BtnMujerTrabajadora" to="." method="repartir_dinero" binds= ["MujerTrabajadora"]]
+[connection signal="pressed" from="UI/Control/BtnJoven" to="." method="repartir_dinero" binds= ["Joven"]]
+[connection signal="pressed" from="UI/Control/BtnNinoDiscapacitado" to="." method="repartir_dinero" binds= ["NinoDiscapacitado"]]
+[connection signal="pressed" from="UI/Control/BtnPerro" to="." method="repartir_dinero" binds= ["Perro"]]

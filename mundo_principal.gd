@@ -83,31 +83,3 @@ func repartir_dinero(rol_id: String) -> void:
 		print("Se ha dado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
 	else:
 		print("No hay más dinero para repartir!")
-
-
-func _on_btn_madre_pressed() -> void:
-	repartir_dinero("Madre")
-
-
-func _on_btn_anciano_pressed() -> void:
-	repartir_dinero("Anciano")
-
-
-func _on_btn_nino_pobre_pressed() -> void:
-	repartir_dinero("NinoPobre")
-
-
-func _on_btn_mujer_trabajadora_pressed() -> void:
-	repartir_dinero("MujerTrabajadora")
-
-
-func _on_btn_joven_pressed() -> void:
-	repartir_dinero("Joven")
-
-
-func _on_btn_nino_discapacitado_pressed() -> void:
-	repartir_dinero("NinoDiscapacitado")
-
-
-func _on_btn_perro_pressed() -> void:
-	repartir_dinero("Perro")
