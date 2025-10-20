@@ -32,3 +32,28 @@ func _ready() -> void:
 		return
 
 	print("Base de datos inicializada correctamente en %s" % RUTA_BD)
+
+
+func guardar_partida(dinero_rey: int, datos_reparto: Dictionary) -> void:
+	if db == null:
+		print("Error: La base de datos no ha sido inicializada.")
+		return
+
+	var datos: Dictionary = {
+		"dinero_rey": dinero_rey,
+		"dinero_madre": datos_reparto["Madre"],
+		"dinero_anciano": datos_reparto["Anciano"],
+		"dinero_nino_pobre": datos_reparto["NinoPobre"],
+		"dinero_mujer_trabajadora": datos_reparto["MujerTrabajadora"],
+		"dinero_joven": datos_reparto["Joven"],
+		"dinero_nino_discapacitado": datos_reparto["NinoDiscapacitado"],
+		"dinero_perro": datos_reparto["Perro"],
+	}
+
+	var success: bool = db.insert_row("partidas", datos)
+
+	if not success:
+		print("Error: No se pudo guardar la partida.")
+		return
+
+	print("Partida guardada exitosamente.")

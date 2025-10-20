@@ -90,3 +90,5 @@ func _on_btn_confirmar_pressed() -> void:
 	print("El Rey decidió quedarse con: %d" % dinero_rey)
 	print("El reparto final fue:")
 	print(dinero_repartido)
+
+	DB.guardar_partida(dinero_rey, dinero_repartido)
