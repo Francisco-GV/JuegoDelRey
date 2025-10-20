@@ -85,6 +85,10 @@ func repartir_dinero(rol_id: String) -> void:
 		print("No hay más dinero para repartir!")
 
 
+func reiniciar_juego() -> void:
+	get_tree().reload_current_scene()
+
+
 func _on_btn_confirmar_pressed() -> void:
 	print("--- Turno Finalizado ---")
 	print("El Rey decidió quedarse con: %d" % dinero_rey)
@@ -92,3 +96,5 @@ func _on_btn_confirmar_pressed() -> void:
 	print(dinero_repartido)
 
 	DB.guardar_partida(dinero_rey, dinero_repartido)
+
+	reiniciar_juego()
