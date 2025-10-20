@@ -83,3 +83,10 @@ func repartir_dinero(rol_id: String) -> void:
 		print("Se ha dado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
 	else:
 		print("No hay más dinero para repartir!")
+
+
+func _on_btn_confirmar_pressed() -> void:
+	print("--- Turno Finalizado ---")
+	print("El Rey decidió quedarse con: %d" % dinero_rey)
+	print("El reparto final fue:")
+	print(dinero_repartido)

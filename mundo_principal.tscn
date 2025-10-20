@@ -122,6 +122,14 @@ offset_right = 955.0
 offset_bottom = 435.0
 text = "+"
 
+[node name="BtnConfirmar" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 578.0
+offset_right = 1132.0
+offset_bottom = 628.0
+text = "Finalizar Reparto"
+
 [connection signal="pressed" from="UI/Control/BtnMadre" to="." method="repartir_dinero" binds= ["Madre"]]
 [connection signal="pressed" from="UI/Control/BtnAnciano" to="." method="repartir_dinero" binds= ["Anciano"]]
 [connection signal="pressed" from="UI/Control/BtnNinoPobre" to="." method="repartir_dinero" binds= ["NinoPobre"]]
@@ -129,3 +137,4 @@ text = "+"
 [connection signal="pressed" from="UI/Control/BtnJoven" to="." method="repartir_dinero" binds= ["Joven"]]
 [connection signal="pressed" from="UI/Control/BtnNinoDiscapacitado" to="." method="repartir_dinero" binds= ["NinoDiscapacitado"]]
 [connection signal="pressed" from="UI/Control/BtnPerro" to="." method="repartir_dinero" binds= ["Perro"]]
+[connection signal="pressed" from="UI/Control/BtnConfirmar" to="." method="_on_btn_confirmar_pressed"]
