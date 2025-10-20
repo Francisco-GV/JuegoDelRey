@@ -4,11 +4,33 @@ extends Node3D
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
 @onready var camara: Camera3D = $Camera3D
 
+var dinero_repartido: Dictionary = {
+	"Madre": 0,
+	"Anciano": 0,
+	"NinoPobre": 0,
+	"MujerTrabajadora": 0,
+	"Joven": 0,
+	"NinoDiscapacitado": 0,
+	"Perro": 0,
+}
+
 # Sprites 3D
 @onready var rol_madre: Sprite3D = $RolMadre
+@onready var rol_anciano: Sprite3D = $RolAnciano
+@onready var rol_nino_pobre: Sprite3D = $RolNinoPobre
+@onready var rol_mujer_trabajadora: Sprite3D = $RolMujerTrabajadora
+@onready var rol_joven: Sprite3D = $RolJoven
+@onready var rol_nino_discapacitado: Sprite3D = $RolNinoDiscapacitado
+@onready var rol_perro: Sprite3D = $RolPerro
 
 # Botones
 @onready var btn_madre: Button = $UI/Control/BtnMadre
+@onready var btn_anciano: Button = $UI/Control/BtnAnciano
+@onready var btn_nino_pobre: Button = $UI/Control/BtnNinoPobre
+@onready var btn_mujer_trabajadora: Button = $UI/Control/BtnMujerTrabajadora
+@onready var btn_joven: Button = $UI/Control/BtnJoven
+@onready var btn_nino_discapacitado: Button = $UI/Control/BtnNinoDiscapacitado
+@onready var btn_perro: Button = $UI/Control/BtnPerro
 
 
 func _ready() -> void:
@@ -17,6 +39,12 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	actualizar_posicion_boton(rol_madre, btn_madre)
+	actualizar_posicion_boton(rol_anciano, btn_anciano)
+	actualizar_posicion_boton(rol_nino_pobre, btn_nino_pobre)
+	actualizar_posicion_boton(rol_mujer_trabajadora, btn_mujer_trabajadora)
+	actualizar_posicion_boton(rol_joven, btn_joven)
+	actualizar_posicion_boton(rol_nino_discapacitado, btn_nino_discapacitado)
+	actualizar_posicion_boton(rol_perro, btn_perro)
 
 
 func actualizar_etiqueta_dinero() -> void:
@@ -44,12 +72,42 @@ func actualizar_posicion_boton(personaje: Sprite3D, boton: Button) -> void:
 	boton.global_position = Vector2(pos_final_x, pos_final_y)
 
 
-func _on_btn_madre_pressed() -> void:
+func repartir_dinero(rol_id: String) -> void:
 	if dinero_rey >= 1:
 		dinero_rey -= 1
 
+		dinero_repartido[rol_id] += 1
+
 		actualizar_etiqueta_dinero()
 
-		print("Se ha dado 1 moneda a madre. Dinero Restante: " + str(dinero_rey))
+		print("Se ha dado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
 	else:
 		print("No hay más dinero para repartir!")
+
+
+func _on_btn_madre_pressed() -> void:
+	repartir_dinero("Madre")
+
+
+func _on_btn_anciano_pressed() -> void:
+	repartir_dinero("Anciano")
+
+
+func _on_btn_nino_pobre_pressed() -> void:
+	repartir_dinero("NinoPobre")
+
+
+func _on_btn_mujer_trabajadora_pressed() -> void:
+	repartir_dinero("MujerTrabajadora")
+
+
+func _on_btn_joven_pressed() -> void:
+	repartir_dinero("Joven")
+
+
+func _on_btn_nino_discapacitado_pressed() -> void:
+	repartir_dinero("NinoDiscapacitado")
+
+
+func _on_btn_perro_pressed() -> void:
+	repartir_dinero("Perro")
