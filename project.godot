@@ -15,6 +15,14 @@ run/main_scene="uid://1l03d6grnj10"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DB="*res://database_manager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
