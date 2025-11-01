@@ -5,6 +5,26 @@ render_mode unshaded, blend_mix, depth_prepass_alpha, cull_disabled,
 uniform sampler2D u_sprite_texture : source_color, filter_linear;
 uniform vec4 u_line_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float u_outline_size : hint_range(0.0, 20.0) = 2.0;
+uniform bool u_enable_billboard_y = true;
+
+void vertex() {
+  if (u_enable_billboard_y) {
+    vec3 camera_forward_dir =
+        normalize((INV_VIEW_MATRIX * vec4(0.0, 0.0, -1.0, 0.0)).xyz);
+
+    camera_forward_dir.y = 0.0;
+    camera_forward_dir = normalize(camera_forward_dir);
+
+    float facing_angle = atan(camera_forward_dir.x, camera_forward_dir.z);
+
+    mat3 rotation_y = mat3(vec3(cos(facing_angle), 0.0, -sin(facing_angle)),
+                           vec3(0.0, 1.0, 0.0),
+                           vec3(sin(facing_angle), 0.0, cos(facing_angle)));
+
+    VERTEX = rotation_y * VERTEX;
+    NORMAL = rotation_y * NORMAL;
+  }
+}
 
 void fragment() {
   vec4 sprite_color = texture(u_sprite_texture, UV);
