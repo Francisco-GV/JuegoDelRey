@@ -1,54 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=9 format=3 uid="uid://1l03d6grnj10"]
 
-[ext_resource type="Texture2D" uid="uid://bqeeksjiuolcf" path="res://icon.svg" id="1_3j017"]
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
+[ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
+[ext_resource type="Texture2D" uid="uid://cs7tq20yl0jhf" path="res://assets/anciano.png" id="3_5ceki"]
+[ext_resource type="Texture2D" uid="uid://blwyxb5seay3v" path="res://assets/nino_pobre.png" id="4_bew0i"]
+[ext_resource type="Texture2D" uid="uid://bdbgdjgnk1pc7" path="res://assets/mujer_trabajadora.png" id="5_w8js2"]
+[ext_resource type="Texture2D" uid="uid://c86tkbg7om6kf" path="res://assets/joven.png" id="6_qoco5"]
+[ext_resource type="Texture2D" uid="uid://en4sbonkoa0s" path="res://assets/nino_discapacitado.png" id="7_ns3yf"]
+[ext_resource type="Texture2D" uid="uid://bafrjhhkhwqpq" path="res://assets/perro.png" id="8_j6w0q"]
 
 [node name="MundoPrincipal" type="Node3D"]
 script = ExtResource("1_226u2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(20, 0.5, 20)
+size = Vector3(40, 0.5, 40)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 5, 10)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 8.733502, 11.867466)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
 
 [node name="RolMadre" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.89, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.38, 0)
+flip_h = true
 billboard = 2
-texture = ExtResource("1_3j017")
+texture = ExtResource("2_5ceki")
 
 [node name="RolAnciano" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.89, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.1, 0)
 billboard = 2
-texture = ExtResource("1_3j017")
+texture = ExtResource("3_5ceki")
 
 [node name="RolNinoPobre" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.89, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.6, 0)
 billboard = 2
-texture = ExtResource("1_3j017")
+texture = ExtResource("4_bew0i")
 
 [node name="RolMujerTrabajadora" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
+flip_h = true
 billboard = 2
-texture = ExtResource("1_3j017")
+texture = ExtResource("5_w8js2")
 
 [node name="RolJoven" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.89, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.1, 0)
 billboard = 2
-texture = ExtResource("1_3j017")
+texture = ExtResource("6_qoco5")
 
 [node name="RolNinoDiscapacitado" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.89, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.52, 0)
 billboard = 2
-texture = ExtResource("1_3j017")
+texture = ExtResource("7_ns3yf")
 
 [node name="RolPerro" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.89, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.6195403, 0)
 billboard = 2
-texture = ExtResource("1_3j017")
+texture = ExtResource("8_j6w0q")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
