@@ -5,6 +5,7 @@ render_mode unshaded, blend_mix, depth_prepass_alpha, cull_disabled,
 uniform sampler2D u_sprite_texture : source_color, filter_linear;
 uniform vec4 u_line_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float u_outline_size : hint_range(0.0, 20.0) = 2.0;
+uniform float u_outline_softness : hint_range(0.0, 1.0) = 0.3;
 uniform bool u_enable_billboard_y = true;
 
 void vertex() {
@@ -47,9 +48,11 @@ void fragment() {
       }
     }
 
-    if (max_neighbor_alpha > 0.1) {
+    float border_alpha =
+        smoothstep(0.0, u_outline_softness, max_neighbor_alpha);
+    if (border_alpha > 0.0) {
       ALBEDO = u_line_color.rgb;
-      ALPHA = 1.0;
+      ALPHA = border_alpha;
     }
   }
 }
