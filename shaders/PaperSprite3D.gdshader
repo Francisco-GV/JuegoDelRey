@@ -7,8 +7,13 @@ uniform vec4 u_line_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float u_outline_size : hint_range(0.0, 20.0) = 2.0;
 uniform float u_outline_softness : hint_range(0.0, 1.0) = 0.3;
 uniform bool u_enable_billboard_y = true;
+uniform float u_flip_h : hint_range(-1.0, 1.0) = -1.0;
 
 void vertex() {
+  vec3 vertex_position = VERTEX;
+
+  vertex_position.x *= u_flip_h;
+
   if (u_enable_billboard_y) {
     vec3 camera_forward_dir =
         normalize((INV_VIEW_MATRIX * vec4(0.0, 0.0, -1.0, 0.0)).xyz);
@@ -22,9 +27,11 @@ void vertex() {
                            vec3(0.0, 1.0, 0.0),
                            vec3(sin(facing_angle), 0.0, cos(facing_angle)));
 
-    VERTEX = rotation_y * VERTEX;
+    vertex_position = rotation_y * vertex_position;
     NORMAL = rotation_y * NORMAL;
   }
+
+  VERTEX = vertex_position;
 }
 
 void fragment() {
