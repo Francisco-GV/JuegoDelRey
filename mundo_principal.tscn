@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=18 format=3 uid="uid://1l03d6grnj10"]
 
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 [ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c86tkbg7om6kf" path="res://assets/joven.png" id="6_qoco5"]
 [ext_resource type="Texture2D" uid="uid://en4sbonkoa0s" path="res://assets/nino_discapacitado.png" id="7_ns3yf"]
 [ext_resource type="Texture2D" uid="uid://bafrjhhkhwqpq" path="res://assets/perro.png" id="8_j6w0q"]
+[ext_resource type="PackedScene" uid="uid://crli7ofvfkiqn" path="res://assets/3d/throne_room/throne_room.glb" id="10_w8js2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w8js2"]
 render_priority = 0
@@ -83,56 +84,56 @@ shader_parameter/u_flip_h = -1.0
 [node name="MundoPrincipal" type="Node3D"]
 script = ExtResource("1_226u2")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(40, 0.5, 40)
+[node name="throne_room" parent="." instance=ExtResource("10_w8js2")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -0.741, -1.5, 30.334356)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 8.733502, 11.867466)
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 11.025499, 33.79733)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+transform = Transform3D(0.49999997, 0.29619813, -0.8137977, 0, 0.9396926, 0.34202012, 0.86602545, -0.17101005, 0.46984628, -45, 11, 17)
 
 [node name="RolMadre" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.38, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.8948183, 21.767899)
 material_override = SubResource("ShaderMaterial_w8js2")
 flip_h = true
 billboard = 2
 texture = ExtResource("2_5ceki")
 
 [node name="RolAnciano" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.614818, 21.767899)
 material_override = SubResource("ShaderMaterial_qoco5")
 billboard = 2
 texture = ExtResource("3_5ceki")
 
 [node name="RolNinoPobre" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.114818, 21.767899)
 material_override = SubResource("ShaderMaterial_ns3yf")
 flip_h = true
 billboard = 2
 texture = ExtResource("4_bew0i")
 
 [node name="RolMujerTrabajadora" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.614818, 21.767899)
 material_override = SubResource("ShaderMaterial_j6w0q")
 billboard = 2
 texture = ExtResource("5_w8js2")
 
 [node name="RolJoven" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.614818, 21.767899)
 material_override = SubResource("ShaderMaterial_e7lw8")
 flip_h = true
 billboard = 2
 texture = ExtResource("6_qoco5")
 
 [node name="RolNinoDiscapacitado" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.52, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.0348182, 21.767899)
 material_override = SubResource("ShaderMaterial_nlvhg")
 billboard = 2
 texture = ExtResource("7_ns3yf")
 
 [node name="RolPerro" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.6195403, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2.1343584, 21.767899)
 material_override = SubResource("ShaderMaterial_l6s8d")
 billboard = 2
 texture = ExtResource("8_j6w0q")
