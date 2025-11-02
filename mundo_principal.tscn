@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=21 format=3 uid="uid://1l03d6grnj10"]
 
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 [ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
@@ -10,6 +10,21 @@
 [ext_resource type="Texture2D" uid="uid://en4sbonkoa0s" path="res://assets/nino_discapacitado.png" id="7_ns3yf"]
 [ext_resource type="Texture2D" uid="uid://bafrjhhkhwqpq" path="res://assets/perro.png" id="8_j6w0q"]
 [ext_resource type="PackedScene" uid="uid://crli7ofvfkiqn" path="res://assets/3d/throne_room/throne_room.glb" id="10_w8js2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8js2"]
+sky_top_color = Color(0.2627451, 0.81960785, 0.8745098, 1)
+sky_horizon_color = Color(1, 1, 1, 1)
+ground_bottom_color = Color(0.22352941, 0.65882355, 0.25490198, 1)
+ground_horizon_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Sky" id="Sky_qoco5"]
+sky_material = SubResource("ProceduralSkyMaterial_w8js2")
+
+[sub_resource type="Environment" id="Environment_w8js2"]
+background_mode = 2
+sky = SubResource("Sky_qoco5")
+ambient_light_source = 2
+ambient_light_color = Color(0.46618086, 0.4661808, 0.4661808, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w8js2"]
 render_priority = 0
@@ -91,7 +106,11 @@ transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -0.741, -1.5, 30.334
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 11.025499, 33.79733)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.49999997, 0.29619813, -0.8137977, 0, 0.9396926, 0.34202012, 0.86602545, -0.17101005, 0.46984628, -45, 11, 17)
+transform = Transform3D(0.49999997, 0.5670222, -0.65458834, 0, 0.7558535, 0.6547408, 0.86602545, -0.32737038, 0.3779267, -122.45807, 89.93122, 17)
+light_energy = 1.35
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w8js2")
 
 [node name="RolMadre" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.8948183, 21.767899)
