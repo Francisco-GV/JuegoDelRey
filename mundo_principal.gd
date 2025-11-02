@@ -32,6 +32,8 @@ var dinero_repartido: Dictionary = {
 @onready var btn_nino_discapacitado: Button = $UI/Control/BtnNinoDiscapacitado
 @onready var btn_perro: Button = $UI/Control/BtnPerro
 
+enum Posicion { ARRIBA, ABAJO }
+
 
 func _ready() -> void:
 	actualizar_etiqueta_dinero()
@@ -51,7 +53,24 @@ func actualizar_etiqueta_dinero() -> void:
 	etiqueta_contador.text = "Dinero Restante: " + str(dinero_rey)
 
 
-func actualizar_posicion_boton(personaje: Sprite3D, boton: Button) -> void:
+func actualizar_posicion_boton(personaje: Sprite3D, boton: Button, posicion: Posicion = Posicion.ARRIBA) -> void:
+	if posicion == Posicion.ARRIBA:
+		_posicionar_boton_sobre_sprite(personaje, boton)
+	elif posicion == Posicion.ABAJO:
+		_posicionar_boton_debajo_sprite(personaje, boton)
+
+
+func _posicionar_boton_debajo_sprite(personaje: Sprite3D, boton: Button) -> void:
+	var personaje_origin: Vector3 = personaje.global_transform.origin
+	var pos_pantalla_2d: Vector2 = camara.unproject_position(personaje_origin)
+
+	var pos_final_x: float = pos_pantalla_2d.x - (boton.size.x / 2.0)
+	var pos_final_y: float = boton.position.y
+
+	boton.global_position = Vector2(pos_final_x, pos_final_y)
+
+
+func _posicionar_boton_sobre_sprite(personaje: Sprite3D, boton: Button) -> void:
 	var offset_y: float = 0.0
 
 	if personaje.texture:
