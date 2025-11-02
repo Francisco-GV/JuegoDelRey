@@ -139,7 +139,7 @@ script = ExtResource("1_226u2")
 transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -0.741, -1.5, 30.334356)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 11.025499, 33.79733)
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 11, 29)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.49999997, 0.5670222, -0.65458834, 0, 0.7558535, 0.6547408, 0.86602545, -0.32737038, 0.3779267, -122.45807, 89.93122, 17)
@@ -149,51 +149,51 @@ light_energy = 1.35
 environment = SubResource("Environment_w8js2")
 
 [node name="Rey" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.106165, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.106, 3)
 material_override = SubResource("ShaderMaterial_wpuaa")
 texture = ExtResource("4_ns3yf")
 
 [node name="RolMadre" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.8948183, 21.767899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.8948183, 17.5)
 material_override = SubResource("ShaderMaterial_w8js2")
 flip_h = true
 billboard = 2
 texture = ExtResource("2_5ceki")
 
 [node name="RolAnciano" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.614818, 21.767899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.614818, 17.5)
 material_override = SubResource("ShaderMaterial_qoco5")
 billboard = 2
 texture = ExtResource("3_5ceki")
 
 [node name="RolNinoPobre" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.114818, 21.767899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.114818, 17.5)
 material_override = SubResource("ShaderMaterial_ns3yf")
 flip_h = true
 billboard = 2
 texture = ExtResource("4_bew0i")
 
 [node name="RolMujerTrabajadora" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.614818, 21.767899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.614818, 17.5)
 material_override = SubResource("ShaderMaterial_j6w0q")
 billboard = 2
 texture = ExtResource("5_w8js2")
 
 [node name="RolJoven" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.614818, 21.767899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.614818, 17.5)
 material_override = SubResource("ShaderMaterial_e7lw8")
 flip_h = true
 billboard = 2
 texture = ExtResource("6_qoco5")
 
 [node name="RolNinoDiscapacitado" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.0348182, 21.767899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.0348182, 17.5)
 material_override = SubResource("ShaderMaterial_nlvhg")
 billboard = 2
 texture = ExtResource("7_ns3yf")
 
 [node name="RolPerro" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2.1343584, 21.767899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2.1343584, 17.5)
 material_override = SubResource("ShaderMaterial_l6s8d")
 billboard = 2
 texture = ExtResource("8_j6w0q")
