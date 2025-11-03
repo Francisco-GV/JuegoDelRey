@@ -1,6 +1,7 @@
 extends Node3D
 
 const Moneda = preload("res://scenes/moneda.tscn")
+const Spark = preload("res://scenes/effects/spark.tscn")
 
 @export var dinero_rey: int = 20
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
@@ -115,6 +116,11 @@ func repartir_dinero(rol_id: String) -> void:
 
 			nueva_moneda.global_position = pos_aparicion
 			add_child(nueva_moneda)
+
+			var spark: GPUParticles3D = Spark.instantiate()
+			spark.global_position = pos_aparicion
+			spark.emitting = true
+			add_child(spark)
 
 
 		print("Se ha dado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])

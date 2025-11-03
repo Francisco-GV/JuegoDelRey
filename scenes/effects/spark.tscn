@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjkahlc50wamv"]
+
+[ext_resource type="Script" uid="uid://db08vl4jckdqi" path="res://scripts/spark.gd" id="1_eqqlx"]
+
+[sub_resource type="Gradient" id="Gradient_e2pxn"]
+offsets = PackedFloat32Array(0, 0.33333334, 0.6666667, 1)
+colors = PackedColorArray(1, 0.972549, 0.7529412, 1, 1, 0.83116233, 0.28918967, 0.8, 1, 0.6629296, 0.2347951, 0.4, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 12
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x6ilj"]
+gradient = SubResource("Gradient_e2pxn")
+
+[sub_resource type="Curve" id="Curve_x6ilj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dlsp2"]
+curve = SubResource("Curve_x6ilj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e2pxn"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 7.0
+damping_min = 0.3
+damping_max = 0.3
+scale_min = 0.5
+scale_max = 0.79999995
+scale_curve = SubResource("CurveTexture_dlsp2")
+color_ramp = SubResource("GradientTexture1D_x6ilj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6ilj"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+detail_blend_mode = 1
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_x6ilj"]
+material = SubResource("StandardMaterial3D_x6ilj")
+size = Vector2(0.25, 0.25)
+
+[node name="EfectoSpark" type="GPUParticles3D"]
+emitting = false
+amount = 32
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_e2pxn")
+draw_pass_1 = SubResource("QuadMesh_x6ilj")
+script = ExtResource("1_eqqlx")
