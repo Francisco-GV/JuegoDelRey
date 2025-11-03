@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=34 format=3 uid="uid://1l03d6grnj10"]
 
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 [ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bdbgdjgnk1pc7" path="res://assets/mujer_trabajadora.png" id="5_w8js2"]
 [ext_resource type="Texture2D" uid="uid://3yno6tw750ow" path="res://assets/images/shadow.png" id="6_e7lw8"]
 [ext_resource type="Texture2D" uid="uid://c86tkbg7om6kf" path="res://assets/joven.png" id="6_qoco5"]
+[ext_resource type="PackedScene" uid="uid://b824o34rcxeeb" path="res://scenes/bowl.tscn" id="7_nlvhg"]
 [ext_resource type="Texture2D" uid="uid://en4sbonkoa0s" path="res://assets/nino_discapacitado.png" id="7_ns3yf"]
 [ext_resource type="Texture2D" uid="uid://bafrjhhkhwqpq" path="res://assets/perro.png" id="8_j6w0q"]
 [ext_resource type="PackedScene" uid="uid://crli7ofvfkiqn" path="res://assets/3d/throne_room/throne_room.glb" id="10_w8js2"]
@@ -195,6 +196,9 @@ texture = ExtResource("2_5ceki")
 transform = Transform3D(2.65, 0, 0, 0, -1.15835185e-07, 2.65, 0, -2.65, -1.15835185e-07, 0, -3.27, 0)
 texture = ExtResource("6_e7lw8")
 
+[node name="Bowl" parent="RolMadre" instance=ExtResource("7_nlvhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.27, 1.75)
+
 [node name="RolAnciano" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.15, 17.5)
 material_override = SubResource("ShaderMaterial_qoco5")
@@ -204,6 +208,9 @@ texture = ExtResource("3_5ceki")
 [node name="BlobShadow" type="Sprite3D" parent="RolAnciano"]
 transform = Transform3D(2.6699615, 0.01435282, 6.2738176e-10, 0, -1.16709415e-07, 2.67, 0.01435282, -2.6699615, -1.1670773e-07, -0.525, -2.99, 0)
 texture = ExtResource("6_e7lw8")
+
+[node name="Bowl" parent="RolAnciano" instance=ExtResource("7_nlvhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.99, 1.75)
 
 [node name="RolNinoPobre" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.114818, 17.5)
@@ -216,6 +223,9 @@ texture = ExtResource("4_bew0i")
 transform = Transform3D(1.6, 0, 0, 0, -6.9938224e-08, 1.6, 0, -1.6, -6.9938224e-08, 0, -2.47, 0)
 texture = ExtResource("6_e7lw8")
 
+[node name="Bowl" parent="RolNinoPobre" instance=ExtResource("7_nlvhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.47, 1.75)
+
 [node name="RolMujerTrabajadora" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.614818, 17.5)
 material_override = SubResource("ShaderMaterial_j6w0q")
@@ -225,6 +235,9 @@ texture = ExtResource("5_w8js2")
 [node name="BlobShadow" type="Sprite3D" parent="RolMujerTrabajadora"]
 transform = Transform3D(2.1, 0, 0, 0, -9.1793915e-08, 2.1, 0, -2.1, -9.1793915e-08, 0.03, -3.97, 0)
 texture = ExtResource("6_e7lw8")
+
+[node name="Bowl" parent="RolMujerTrabajadora" instance=ExtResource("7_nlvhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.97, 1.75)
 
 [node name="RolJoven" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.614818, 17.5)
@@ -237,6 +250,9 @@ texture = ExtResource("6_qoco5")
 transform = Transform3D(2.1, 0, 0, 0, -9.1793915e-08, 2.1, 0, -2.1, -9.1793915e-08, 0.12, -3.97, 0)
 texture = ExtResource("6_e7lw8")
 
+[node name="Bowl" parent="RolJoven" instance=ExtResource("7_nlvhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.97, 1.75)
+
 [node name="RolNinoDiscapacitado" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.6612606, 17.5)
 material_override = SubResource("ShaderMaterial_nlvhg")
@@ -247,6 +263,9 @@ texture = ExtResource("7_ns3yf")
 transform = Transform3D(2.2, 0, 0, 0, -9.616505e-08, 2.2, 0, -2.2, -9.616505e-08, 0, -2.45, 0)
 texture = ExtResource("6_e7lw8")
 
+[node name="Bowl" parent="RolNinoDiscapacitado" instance=ExtResource("7_nlvhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.45, 1.75)
+
 [node name="RolPerro" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.6598, 17.5)
 material_override = SubResource("ShaderMaterial_l6s8d")
@@ -256,6 +275,9 @@ texture = ExtResource("8_j6w0q")
 [node name="BlobShadow" type="Sprite3D" parent="RolPerro"]
 transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, 1.5, 0, -1.5, -6.556708e-08, 0.4, -1.46, 0)
 texture = ExtResource("6_e7lw8")
+
+[node name="Bowl" parent="RolPerro" instance=ExtResource("7_nlvhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.46, 1.75)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
