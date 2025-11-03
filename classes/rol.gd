@@ -4,6 +4,7 @@ extends Resource
 var sprite: Sprite3D
 var controles: Container
 var dinero: int = 0
+var monedas: Array[RigidBody3D] = []
 
 func _init(rol_sprite: Sprite3D, rol_controles: Container) -> void:
     self.sprite = rol_sprite

@@ -117,6 +117,8 @@ func repartir_dinero(rol_id: String) -> void:
 			nueva_moneda.global_position = pos_aparicion
 			add_child(nueva_moneda)
 
+			roles[rol_id].monedas.push_back(nueva_moneda)
+
 			var spark: GPUParticles3D = Spark.instantiate()
 			spark.global_position = pos_aparicion
 			spark.emitting = true
@@ -126,6 +128,24 @@ func repartir_dinero(rol_id: String) -> void:
 		print("Se ha dado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
 	else:
 		print("No hay más dinero para repartir!")
+
+
+func remover_dinero(rol_id: String) -> void:
+	if roles[rol_id].dinero > 0:
+		dinero_rey += 1
+
+		roles[rol_id].dinero -= 1
+
+		actualizar_etiqueta_dinero()
+
+		var moneda = roles[rol_id].monedas.pick_random()
+
+		remove_child(moneda)
+		roles[rol_id].monedas.erase(moneda)
+
+		print("Se ha quitado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
+	else:
+		print("No hay más dinero que quitar a %s!" % rol_id)
 
 
 func reiniciar_juego() -> void:

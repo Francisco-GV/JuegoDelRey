@@ -320,6 +320,12 @@ mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
+[node name="BtnRemover" type="Button" parent="UI/Control/CtrlMadre"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "-
+"
+
 [node name="CtrlAnciano" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 320.0
@@ -333,6 +339,12 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
+
+[node name="BtnRemover" type="Button" parent="UI/Control/CtrlAnciano"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "-
+"
 
 [node name="CtrlNinoPobre" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
@@ -348,6 +360,12 @@ mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
+[node name="BtnRemover" type="Button" parent="UI/Control/CtrlNinoPobre"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "-
+"
+
 [node name="CtrlMujerTrabajadora" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 560.0
@@ -361,6 +379,12 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
+
+[node name="BtnRemover" type="Button" parent="UI/Control/CtrlMujerTrabajadora"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "-
+"
 
 [node name="CtrlJoven" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
@@ -376,6 +400,12 @@ mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
+[node name="BtnRemover" type="Button" parent="UI/Control/CtrlJoven"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "-
+"
+
 [node name="CtrlNinoDiscapacitado" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 800.0
@@ -390,6 +420,12 @@ mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
+[node name="BtnRemover" type="Button" parent="UI/Control/CtrlNinoDiscapacitado"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "-
+"
+
 [node name="CtrlPerro" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 920.0
@@ -403,6 +439,12 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
+
+[node name="BtnRemover" type="Button" parent="UI/Control/CtrlPerro"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "-
+"
 
 [node name="BtnConfirmar" type="Button" parent="UI/Control"]
 layout_mode = 1
@@ -449,10 +491,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.293, 0, -9.9277725)
 mesh = ExtResource("11_qoco5")
 
 [connection signal="pressed" from="UI/Control/CtrlMadre/BtnAgregar" to="." method="repartir_dinero" binds= ["Madre"]]
+[connection signal="pressed" from="UI/Control/CtrlMadre/BtnRemover" to="." method="remover_dinero" binds= ["Madre"]]
 [connection signal="pressed" from="UI/Control/CtrlAnciano/BtnAgregar" to="." method="repartir_dinero" binds= ["Anciano"]]
+[connection signal="pressed" from="UI/Control/CtrlAnciano/BtnRemover" to="." method="remover_dinero" binds= ["Anciano"]]
 [connection signal="pressed" from="UI/Control/CtrlNinoPobre/BtnAgregar" to="." method="repartir_dinero" binds= ["NinoPobre"]]
+[connection signal="pressed" from="UI/Control/CtrlNinoPobre/BtnRemover" to="." method="remover_dinero" binds= ["NinoPobre"]]
 [connection signal="pressed" from="UI/Control/CtrlMujerTrabajadora/BtnAgregar" to="." method="repartir_dinero" binds= ["MujerTrabajadora"]]
+[connection signal="pressed" from="UI/Control/CtrlMujerTrabajadora/BtnRemover" to="." method="remover_dinero" binds= ["MujerTrabajadora"]]
 [connection signal="pressed" from="UI/Control/CtrlJoven/BtnAgregar" to="." method="repartir_dinero" binds= ["Joven"]]
+[connection signal="pressed" from="UI/Control/CtrlJoven/BtnRemover" to="." method="remover_dinero" binds= ["Joven"]]
 [connection signal="pressed" from="UI/Control/CtrlNinoDiscapacitado/BtnAgregar" to="." method="repartir_dinero" binds= ["NinoDiscapacitado"]]
+[connection signal="pressed" from="UI/Control/CtrlNinoDiscapacitado/BtnRemover" to="." method="remover_dinero" binds= ["NinoDiscapacitado"]]
 [connection signal="pressed" from="UI/Control/CtrlPerro/BtnAgregar" to="." method="repartir_dinero" binds= ["Perro"]]
+[connection signal="pressed" from="UI/Control/CtrlPerro/BtnRemover" to="." method="remover_dinero" binds= ["Perro"]]
 [connection signal="pressed" from="UI/Control/BtnConfirmar" to="." method="_on_btn_confirmar_pressed"]
