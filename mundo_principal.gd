@@ -1,5 +1,7 @@
 extends Node3D
 
+const Moneda = preload("res://scenes/moneda.tscn")
+
 @export var dinero_rey: int = 20
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
 @onready var camara: Camera3D = $Camera3D
@@ -100,6 +102,20 @@ func repartir_dinero(rol_id: String) -> void:
 		roles[rol_id].dinero += 1
 
 		actualizar_etiqueta_dinero()
+
+		var nueva_moneda = Moneda.instantiate()
+		var sprite: Sprite3D = roles[rol_id].sprite
+
+		if sprite:
+			var pos_personaje = sprite.global_position
+			var pos_aparicion = pos_personaje + Vector3(0, 3, 1.75)
+
+			pos_aparicion.x += randf_range(-0.5, 0.5)
+			pos_aparicion.z += randf_range(-0.5, 0.5)
+
+			nueva_moneda.global_position = pos_aparicion
+			add_child(nueva_moneda)
+
 
 		print("Se ha dado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
 	else:
