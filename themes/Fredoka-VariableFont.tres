@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://83gybuy2fg6h"]
+
+[ext_resource type="FontFile" uid="uid://b2lioee1ml5yc" path="res://assets/fonts/Fredoka-VariableFont_wdth,wght.ttf" id="1_1na6g"]
+
+[resource]
+base_font = ExtResource("1_1na6g")
+variation_embolden = 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=30 format=3 uid="uid://1l03d6grnj10"]
 
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 [ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bafrjhhkhwqpq" path="res://assets/perro.png" id="8_j6w0q"]
 [ext_resource type="PackedScene" uid="uid://crli7ofvfkiqn" path="res://assets/3d/throne_room/throne_room.glb" id="10_w8js2"]
 [ext_resource type="ArrayMesh" uid="uid://dwn0x8slcxclt" path="res://meshes/malla_pino.tres" id="11_qoco5"]
+[ext_resource type="Theme" uid="uid://so6h8e8q67b1" path="res://themes/flat_theme.tres" id="15_l6s8d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8js2"]
 sky_top_color = Color(0.2627451, 0.81960785, 0.8745098, 1)
@@ -211,70 +212,85 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("15_l6s8d")
 
 [node name="ContadorDinero" type="Label" parent="UI/Control"]
-layout_mode = 0
+layout_mode = 1
 offset_left = 20.0
 offset_top = 20.0
-offset_right = 172.0
-offset_bottom = 70.0
+offset_right = 285.0
+offset_bottom = 57.0
 text = "Dinero Restante: 20"
-vertical_alignment = 1
+horizontal_alignment = 1
 
 [node name="BtnMadre" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 550.0
-offset_right = 235.0
-offset_bottom = 584.9999
+offset_right = 236.0
+offset_bottom = 586.0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
 text = "+"
 
 [node name="BtnAnciano" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 320.0
 offset_top = 550.0
-offset_right = 355.0
-offset_bottom = 584.9999
+offset_right = 356.0
+offset_bottom = 586.0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
 text = "+"
 
 [node name="BtnNinoPobre" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 440.0
 offset_top = 550.0
-offset_right = 475.0
-offset_bottom = 584.9999
+offset_right = 476.0
+offset_bottom = 586.0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
 text = "+"
 
 [node name="BtnMujerTrabajadora" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 560.0
 offset_top = 550.0
-offset_right = 595.0
-offset_bottom = 584.9999
+offset_right = 596.0
+offset_bottom = 586.0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
 text = "+"
 
 [node name="BtnJoven" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 680.0
 offset_top = 550.0
-offset_right = 715.0
-offset_bottom = 584.9999
+offset_right = 716.0
+offset_bottom = 586.0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
 text = "+"
 
 [node name="BtnNinoDiscapacitado" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 550.0
-offset_right = 835.0
-offset_bottom = 584.9999
+offset_right = 836.0
+offset_bottom = 586.0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
 text = "+"
 
 [node name="BtnPerro" type="Button" parent="UI/Control"]
 layout_mode = 0
 offset_left = 920.0
 offset_top = 550.0
-offset_right = 955.0
-offset_bottom = 584.9999
+offset_right = 956.0
+offset_bottom = 586.0
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
 text = "+"
 
 [node name="BtnConfirmar" type="Button" parent="UI/Control"]
@@ -284,9 +300,10 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -75.0
 offset_top = 20.0
-offset_right = 75.0
-offset_bottom = 70.0
+offset_right = 65.0
+offset_bottom = 52.0
 grow_horizontal = 2
+mouse_default_cursor_shape = 2
 text = "Finalizar Reparto"
 
 [node name="PaperSprite3D" type="Sprite3D" parent="."]
