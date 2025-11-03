@@ -19,63 +19,63 @@ var roles: Dictionary[String, Rol]
 @onready var rol_perro: Sprite3D = $RolPerro
 
 # Botones
-@onready var btn_madre: Button = $UI/Control/BtnMadre
-@onready var btn_anciano: Button = $UI/Control/BtnAnciano
-@onready var btn_nino_pobre: Button = $UI/Control/BtnNinoPobre
-@onready var btn_mujer_trabajadora: Button = $UI/Control/BtnMujerTrabajadora
-@onready var btn_joven: Button = $UI/Control/BtnJoven
-@onready var btn_nino_discapacitado: Button = $UI/Control/BtnNinoDiscapacitado
-@onready var btn_perro: Button = $UI/Control/BtnPerro
+@onready var ctrl_madre: Container = $UI/Control/CtrlMadre
+@onready var ctrl_anciano: Container = $UI/Control/CtrlAnciano
+@onready var ctrl_nino_pobre: Container = $UI/Control/CtrlNinoPobre
+@onready var ctrl_mujer_trabajadora: Container = $UI/Control/CtrlMujerTrabajadora
+@onready var ctrl_joven: Container = $UI/Control/CtrlJoven
+@onready var ctrl_nino_discapacitado: Container = $UI/Control/CtrlNinoDiscapacitado
+@onready var ctrl_perro: Container = $UI/Control/CtrlPerro
 
 enum Posicion { ARRIBA, ABAJO }
 
 
 func _ready() -> void:
 	roles = {
-		"Madre": Rol.new(rol_madre, btn_madre),
-		"Anciano": Rol.new(rol_anciano, btn_anciano),
-		"NinoPobre": Rol.new(rol_nino_pobre, btn_nino_pobre),
-		"MujerTrabajadora": Rol.new(rol_mujer_trabajadora, btn_mujer_trabajadora),
-		"Joven": Rol.new(rol_joven, btn_joven),
-		"NinoDiscapacitado": Rol.new(rol_nino_discapacitado, btn_nino_discapacitado),
-		"Perro": Rol.new(rol_perro, btn_perro),
+		"Madre": Rol.new(rol_madre, ctrl_madre),
+		"Anciano": Rol.new(rol_anciano, ctrl_anciano),
+		"NinoPobre": Rol.new(rol_nino_pobre, ctrl_nino_pobre),
+		"MujerTrabajadora": Rol.new(rol_mujer_trabajadora, ctrl_mujer_trabajadora),
+		"Joven": Rol.new(rol_joven, ctrl_joven),
+		"NinoDiscapacitado": Rol.new(rol_nino_discapacitado, ctrl_nino_discapacitado),
+		"Perro": Rol.new(rol_perro, ctrl_perro),
 	}
 
 	actualizar_etiqueta_dinero()
 
 
 func _process(_delta: float) -> void:
-	actualizar_posicion_boton(rol_madre, btn_madre)
-	actualizar_posicion_boton(rol_anciano, btn_anciano)
-	actualizar_posicion_boton(rol_nino_pobre, btn_nino_pobre)
-	actualizar_posicion_boton(rol_mujer_trabajadora, btn_mujer_trabajadora)
-	actualizar_posicion_boton(rol_joven, btn_joven)
-	actualizar_posicion_boton(rol_nino_discapacitado, btn_nino_discapacitado)
-	actualizar_posicion_boton(rol_perro, btn_perro)
+	actualizar_posicion_controles(rol_madre, ctrl_madre)
+	actualizar_posicion_controles(rol_anciano, ctrl_anciano)
+	actualizar_posicion_controles(rol_nino_pobre, ctrl_nino_pobre)
+	actualizar_posicion_controles(rol_mujer_trabajadora, ctrl_mujer_trabajadora)
+	actualizar_posicion_controles(rol_joven, ctrl_joven)
+	actualizar_posicion_controles(rol_nino_discapacitado, ctrl_nino_discapacitado)
+	actualizar_posicion_controles(rol_perro, ctrl_perro)
 
 
 func actualizar_etiqueta_dinero() -> void:
 	etiqueta_contador.text = "Dinero Restante: " + str(dinero_rey)
 
 
-func actualizar_posicion_boton(personaje: Sprite3D, boton: Button, posicion: Posicion = Posicion.ARRIBA) -> void:
+func actualizar_posicion_controles(personaje: Sprite3D, controles: Container, posicion: Posicion = Posicion.ARRIBA) -> void:
 	if posicion == Posicion.ARRIBA:
-		_posicionar_boton_sobre_sprite(personaje, boton)
+		_posicionar_controles_sobre_sprite(personaje, controles)
 	elif posicion == Posicion.ABAJO:
-		_posicionar_boton_debajo_sprite(personaje, boton)
+		_posicionar_controles_debajo_sprite(personaje, controles)
 
 
-func _posicionar_boton_debajo_sprite(personaje: Sprite3D, boton: Button) -> void:
+func _posicionar_controles_debajo_sprite(personaje: Sprite3D, controles: Container) -> void:
 	var personaje_origin: Vector3 = personaje.global_transform.origin
 	var pos_pantalla_2d: Vector2 = camara.unproject_position(personaje_origin)
 
-	var pos_final_x: float = pos_pantalla_2d.x - (boton.size.x / 2.0)
-	var pos_final_y: float = boton.position.y
+	var pos_final_x: float = pos_pantalla_2d.x - (controles.size.x / 2.0)
+	var pos_final_y: float = controles.position.y
 
-	boton.global_position = Vector2(pos_final_x, pos_final_y)
+	controles.global_position = Vector2(pos_final_x, pos_final_y)
 
 
-func _posicionar_boton_sobre_sprite(personaje: Sprite3D, boton: Button) -> void:
+func _posicionar_controles_sobre_sprite(personaje: Sprite3D, controles: Container) -> void:
 	var offset_y: float = 0.0
 
 	if personaje.texture:
@@ -90,10 +90,10 @@ func _posicionar_boton_sobre_sprite(personaje: Sprite3D, boton: Button) -> void:
 	var pos_pantalla_2d: Vector2 = camara.unproject_position(pos_cabeza_3d)
 
 	var margen_vertical: float = 5.0
-	var pos_final_x: float = pos_pantalla_2d.x - (boton.size.x / 2.0)
-	var pos_final_y: float = pos_pantalla_2d.y - boton.size.y - margen_vertical
+	var pos_final_x: float = pos_pantalla_2d.x - (controles.size.x / 2.0)
+	var pos_final_y: float = pos_pantalla_2d.y - controles.size.y - margen_vertical
 
-	boton.global_position = Vector2(pos_final_x, pos_final_y)
+	controles.global_position = Vector2(pos_final_x, pos_final_y)
 
 
 func repartir_dinero(rol_id: String) -> void:

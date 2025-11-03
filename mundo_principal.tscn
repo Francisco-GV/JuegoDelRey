@@ -306,72 +306,100 @@ offset_bottom = 57.0
 text = "Dinero Restante: 20"
 horizontal_alignment = 1
 
-[node name="BtnMadre" type="Button" parent="UI/Control"]
+[node name="CtrlMadre" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 550.0
 offset_right = 236.0
 offset_bottom = 586.0
+
+[node name="BtnAgregar" type="Button" parent="UI/Control/CtrlMadre"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
-[node name="BtnAnciano" type="Button" parent="UI/Control"]
+[node name="CtrlAnciano" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 320.0
 offset_top = 550.0
 offset_right = 356.0
 offset_bottom = 586.0
+
+[node name="BtnAgregar" type="Button" parent="UI/Control/CtrlAnciano"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
-[node name="BtnNinoPobre" type="Button" parent="UI/Control"]
+[node name="CtrlNinoPobre" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 440.0
 offset_top = 550.0
 offset_right = 476.0
 offset_bottom = 586.0
+
+[node name="BtnAgregar" type="Button" parent="UI/Control/CtrlNinoPobre"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
-[node name="BtnMujerTrabajadora" type="Button" parent="UI/Control"]
+[node name="CtrlMujerTrabajadora" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 560.0
 offset_top = 550.0
 offset_right = 596.0
 offset_bottom = 586.0
+
+[node name="BtnAgregar" type="Button" parent="UI/Control/CtrlMujerTrabajadora"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
-[node name="BtnJoven" type="Button" parent="UI/Control"]
+[node name="CtrlJoven" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 680.0
 offset_top = 550.0
 offset_right = 716.0
 offset_bottom = 586.0
+
+[node name="BtnAgregar" type="Button" parent="UI/Control/CtrlJoven"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
-[node name="BtnNinoDiscapacitado" type="Button" parent="UI/Control"]
+[node name="CtrlNinoDiscapacitado" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 550.0
 offset_right = 836.0
 offset_bottom = 586.0
+
+[node name="BtnAgregar" type="Button" parent="UI/Control/CtrlNinoDiscapacitado"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
-[node name="BtnPerro" type="Button" parent="UI/Control"]
+[node name="CtrlPerro" type="HBoxContainer" parent="UI/Control"]
 layout_mode = 0
 offset_left = 920.0
 offset_top = 550.0
 offset_right = 956.0
 offset_bottom = 586.0
+
+[node name="BtnAgregar" type="Button" parent="UI/Control/CtrlPerro"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
@@ -420,11 +448,11 @@ multimesh = SubResource("MultiMesh_e7lw8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.293, 0, -9.9277725)
 mesh = ExtResource("11_qoco5")
 
-[connection signal="pressed" from="UI/Control/BtnMadre" to="." method="repartir_dinero" binds= ["Madre"]]
-[connection signal="pressed" from="UI/Control/BtnAnciano" to="." method="repartir_dinero" binds= ["Anciano"]]
-[connection signal="pressed" from="UI/Control/BtnNinoPobre" to="." method="repartir_dinero" binds= ["NinoPobre"]]
-[connection signal="pressed" from="UI/Control/BtnMujerTrabajadora" to="." method="repartir_dinero" binds= ["MujerTrabajadora"]]
-[connection signal="pressed" from="UI/Control/BtnJoven" to="." method="repartir_dinero" binds= ["Joven"]]
-[connection signal="pressed" from="UI/Control/BtnNinoDiscapacitado" to="." method="repartir_dinero" binds= ["NinoDiscapacitado"]]
-[connection signal="pressed" from="UI/Control/BtnPerro" to="." method="repartir_dinero" binds= ["Perro"]]
+[connection signal="pressed" from="UI/Control/CtrlMadre/BtnAgregar" to="." method="repartir_dinero" binds= ["Madre"]]
+[connection signal="pressed" from="UI/Control/CtrlAnciano/BtnAgregar" to="." method="repartir_dinero" binds= ["Anciano"]]
+[connection signal="pressed" from="UI/Control/CtrlNinoPobre/BtnAgregar" to="." method="repartir_dinero" binds= ["NinoPobre"]]
+[connection signal="pressed" from="UI/Control/CtrlMujerTrabajadora/BtnAgregar" to="." method="repartir_dinero" binds= ["MujerTrabajadora"]]
+[connection signal="pressed" from="UI/Control/CtrlJoven/BtnAgregar" to="." method="repartir_dinero" binds= ["Joven"]]
+[connection signal="pressed" from="UI/Control/CtrlNinoDiscapacitado/BtnAgregar" to="." method="repartir_dinero" binds= ["NinoDiscapacitado"]]
+[connection signal="pressed" from="UI/Control/CtrlPerro/BtnAgregar" to="." method="repartir_dinero" binds= ["Perro"]]
 [connection signal="pressed" from="UI/Control/BtnConfirmar" to="." method="_on_btn_confirmar_pressed"]
