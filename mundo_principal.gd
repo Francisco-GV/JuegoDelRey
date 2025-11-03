@@ -4,15 +4,7 @@ extends Node3D
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
 @onready var camara: Camera3D = $Camera3D
 
-var dinero_repartido: Dictionary = {
-	"Madre": 0,
-	"Anciano": 0,
-	"NinoPobre": 0,
-	"MujerTrabajadora": 0,
-	"Joven": 0,
-	"NinoDiscapacitado": 0,
-	"Perro": 0,
-}
+var roles: Dictionary[String, Rol]
 
 # Sprites 3D
 @onready var rol_madre: Sprite3D = $RolMadre
@@ -36,6 +28,16 @@ enum Posicion { ARRIBA, ABAJO }
 
 
 func _ready() -> void:
+	roles = {
+		"Madre": Rol.new(rol_madre, btn_madre),
+		"Anciano": Rol.new(rol_anciano, btn_anciano),
+		"NinoPobre": Rol.new(rol_nino_pobre, btn_nino_pobre),
+		"MujerTrabajadora": Rol.new(rol_mujer_trabajadora, btn_mujer_trabajadora),
+		"Joven": Rol.new(rol_joven, btn_joven),
+		"NinoDiscapacitado": Rol.new(rol_nino_discapacitado, btn_nino_discapacitado),
+		"Perro": Rol.new(rol_perro, btn_perro),
+	}
+
 	actualizar_etiqueta_dinero()
 
 
@@ -95,7 +97,7 @@ func repartir_dinero(rol_id: String) -> void:
 	if dinero_rey >= 1:
 		dinero_rey -= 1
 
-		dinero_repartido[rol_id] += 1
+		roles[rol_id].dinero += 1
 
 		actualizar_etiqueta_dinero()
 
@@ -112,6 +114,12 @@ func _on_btn_confirmar_pressed() -> void:
 	print("--- Turno Finalizado ---")
 	print("El Rey decidió quedarse con: %d" % dinero_rey)
 	print("El reparto final fue:")
+
+	var dinero_repartido: Dictionary = {}
+
+	for rol in roles:
+		dinero_repartido[rol] = roles[rol].dinero
+
 	print(dinero_repartido)
 
 	DB.guardar_partida(dinero_rey, dinero_repartido)
