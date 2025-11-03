@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://7t0ck7w4g3h3"]
+
+[ext_resource type="Script" uid="uid://db08vl4jckdqi" path="res://scripts/spark.gd" id="1_snot7"]
+
+[sub_resource type="Gradient" id="Gradient_e2pxn"]
+offsets = PackedFloat32Array(0, 0.33333334, 0.6666667, 1)
+colors = PackedColorArray(0.8472311, 0.8472311, 0.8472311, 0, 0.7528677, 0.7528677, 0.7528677, 0.70000005, 0.5021107, 0.5021107, 0.5021107, 0.4, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 12
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x6ilj"]
+gradient = SubResource("Gradient_e2pxn")
+
+[sub_resource type="Curve" id="Curve_x6ilj"]
+_data = [Vector2(0, 0.4044944), 0.0, 0.0, 0, 0, Vector2(0.49572656, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_dlsp2"]
+curve = SubResource("Curve_x6ilj")
+
+[sub_resource type="Curve" id="Curve_snot7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gtsbq"]
+curve = SubResource("Curve_snot7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e2pxn"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 1.5
+initial_velocity_max = 2.5
+gravity = Vector3(0, 1.5, 0)
+damping_min = 0.1
+damping_max = 0.3
+scale_min = 0.5
+scale_max = 0.79999995
+scale_curve = SubResource("CurveTexture_dlsp2")
+color_ramp = SubResource("GradientTexture1D_x6ilj")
+turbulence_enabled = true
+turbulence_noise_strength = 0.8
+turbulence_noise_scale = 6.0
+turbulence_noise_speed = Vector3(0, 0.5, 0)
+turbulence_influence_over_life = SubResource("CurveTexture_gtsbq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6ilj"]
+transparency = 1
+depth_draw_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_x6ilj"]
+material = SubResource("StandardMaterial3D_x6ilj")
+size = Vector2(0.2, 0.2)
+
+[node name="EfectoPoof" type="GPUParticles3D"]
+emitting = false
+amount = 32
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_e2pxn")
+draw_pass_1 = SubResource("QuadMesh_x6ilj")
+script = ExtResource("1_snot7")

@@ -2,6 +2,7 @@ extends Node3D
 
 const Moneda = preload("res://scenes/moneda.tscn")
 const Spark = preload("res://scenes/effects/spark.tscn")
+const Poof = preload("res://scenes/effects/poof.tscn")
 
 @export var dinero_rey: int = 20
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
@@ -139,9 +140,15 @@ func remover_dinero(rol_id: String) -> void:
 		actualizar_etiqueta_dinero()
 
 		var moneda = roles[rol_id].monedas.pick_random()
+		var pos_moneda = moneda.global_position
 
 		remove_child(moneda)
 		roles[rol_id].monedas.erase(moneda)
+
+		var poof: GPUParticles3D = Poof.instantiate()
+		poof.global_position = pos_moneda
+		poof.emitting = true
+		add_child(poof)
 
 		print("Se ha quitado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
 	else:
