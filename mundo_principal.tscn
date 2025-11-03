@@ -164,7 +164,7 @@ shape = SubResource("BoxShape3D_nlvhg")
 debug_color = Color(0.5564387, 0.3984954, 1, 0.41960785)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 11, 29)
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, -0.535, 11.7, 29.9)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.49999997, 0.5670222, -0.65458834, 0, 0.7558535, 0.6547408, 0.86602545, -0.32737038, 0.3779267, -122.45807, 89.93122, 17)

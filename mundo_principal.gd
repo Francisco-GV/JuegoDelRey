@@ -8,6 +8,10 @@ const Poof = preload("res://scenes/effects/poof.tscn")
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
 @onready var camara: Camera3D = $Camera3D
 
+var camara_rotacion_base: Vector3
+@export var sensibilidad_mouse_camara: float = 0.05
+@export var suavizado_mouse_camara: float = 5.0
+
 var roles: Dictionary[String, Rol]
 
 # Sprites 3D
@@ -32,6 +36,9 @@ enum Posicion { ARRIBA, ABAJO }
 
 
 func _ready() -> void:
+	if camara:
+		camara_rotacion_base = camara.rotation
+
 	roles = {
 		"Madre": Rol.new(rol_madre, ctrl_madre),
 		"Anciano": Rol.new(rol_anciano, ctrl_anciano),
@@ -45,7 +52,7 @@ func _ready() -> void:
 	actualizar_etiqueta_dinero()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	actualizar_posicion_controles(rol_madre, ctrl_madre)
 	actualizar_posicion_controles(rol_anciano, ctrl_anciano)
 	actualizar_posicion_controles(rol_nino_pobre, ctrl_nino_pobre)
@@ -53,6 +60,23 @@ func _process(_delta: float) -> void:
 	actualizar_posicion_controles(rol_joven, ctrl_joven)
 	actualizar_posicion_controles(rol_nino_discapacitado, ctrl_nino_discapacitado)
 	actualizar_posicion_controles(rol_perro, ctrl_perro)
+
+
+	if camara:
+		var tamano_viewport = get_viewport().size
+		var pos_mouse = get_viewport().get_mouse_position()
+
+		var centro_viewport = tamano_viewport / 2.0
+
+		var offset_mouse_normalizado = (pos_mouse - centro_viewport) / centro_viewport
+
+		var rot_objetivo = Vector3(
+			camara_rotacion_base.x - (offset_mouse_normalizado.y * sensibilidad_mouse_camara),
+			camara_rotacion_base.y - (offset_mouse_normalizado.x * sensibilidad_mouse_camara),
+			camara_rotacion_base.z
+		)
+
+		camara.rotation = camara.rotation.lerp(rot_objetivo, suavizado_mouse_camara * delta)
 
 
 func actualizar_etiqueta_dinero() -> void:
