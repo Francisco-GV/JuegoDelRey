@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://crli7ofvfkiqn"
+uid="uid://dfuayt1g5yliq"
 path="res://.godot/imported/throne_room.glb-0d0e6f2692d99c37f3e736501cf6d667.scn"
 
 [deps]
@@ -37,6 +37,18 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"throne_room_Object_14": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://meshes/throne_room.tres",
+"save_to_file/path": "uid://cj27itpv5pf2y"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

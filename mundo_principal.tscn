@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 [ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
+[ext_resource type="PackedScene" uid="uid://cbant27amkqp6" path="res://scenes/throne_room.tscn" id="2_nlvhg"]
 [ext_resource type="Shader" uid="uid://ccp1t61bhmllx" path="res://shaders/PaperSprite3D.gdshader" id="2_w8js2"]
 [ext_resource type="Texture2D" uid="uid://cs7tq20yl0jhf" path="res://assets/anciano.png" id="3_5ceki"]
 [ext_resource type="Texture2D" uid="uid://blwyxb5seay3v" path="res://assets/nino_pobre.png" id="4_bew0i"]
@@ -12,15 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://b824o34rcxeeb" path="res://scenes/bowl.tscn" id="7_nlvhg"]
 [ext_resource type="Texture2D" uid="uid://en4sbonkoa0s" path="res://assets/nino_discapacitado.png" id="7_ns3yf"]
 [ext_resource type="Texture2D" uid="uid://bafrjhhkhwqpq" path="res://assets/perro.png" id="8_j6w0q"]
-[ext_resource type="PackedScene" uid="uid://crli7ofvfkiqn" path="res://assets/3d/throne_room/throne_room.glb" id="10_w8js2"]
 [ext_resource type="ArrayMesh" uid="uid://dwn0x8slcxclt" path="res://meshes/malla_pino.tres" id="11_qoco5"]
 [ext_resource type="Theme" uid="uid://so6h8e8q67b1" path="res://themes/flat_theme.tres" id="15_l6s8d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e7lw8"]
-size = Vector3(5, 0.25, 5)
+size = Vector3(5, 0.25, 5.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nlvhg"]
-size = Vector3(15, 0.25, 5)
+size = Vector3(18, 0.25, 5.5)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8js2"]
 sky_top_color = Color(0.2627451, 0.81960785, 0.8745098, 1)
@@ -145,26 +145,28 @@ buffer = PackedFloat32Array(0.9683586, 0, 0.9774435, 9.493032, 0, 1.3759048, 0, 
 [node name="MundoPrincipal" type="Node3D"]
 script = ExtResource("1_226u2")
 
-[node name="throne_room" parent="." instance=ExtResource("10_w8js2")]
-transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -0.741, -1.5, 30.334356)
+[node name="ThroneRoom" parent="." instance=ExtResource("2_nlvhg")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 0, -1.5, 30)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="throne_room"]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.019999996, 0.536, -3)
+[node name="Carpet" type="StaticBody3D" parent="ThroneRoom"]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -0.02, 0.536, -2.897)
 
-[node name="CollisionShapeCarpet" type="CollisionShape3D" parent="throne_room/StaticBody3D"]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0)
+[node name="CollisionShapeCarpet" type="CollisionShape3D" parent="ThroneRoom/Carpet"]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, -1.115)
 shape = SubResource("BoxShape3D_e7lw8")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="throne_room"]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.019999996, 0.385, -3)
+[node name="Floor" type="StaticBody3D" parent="ThroneRoom"]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0.385, -2.897)
 
-[node name="CollisionShapeFloor" type="CollisionShape3D" parent="throne_room/StaticBody3D2"]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0)
+[node name="CollisionShapeFloor" type="CollisionShape3D" parent="ThroneRoom/Floor"]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -0.444, 0, -1.115)
 shape = SubResource("BoxShape3D_nlvhg")
 debug_color = Color(0.5564387, 0.3984954, 1, 0.41960785)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, -0.535, 11.7, 29.9)
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.49999997, 0.5670222, -0.65458834, 0, 0.7558535, 0.6547408, 0.86602545, -0.32737038, 0.3779267, -122.45807, 89.93122, 17)
