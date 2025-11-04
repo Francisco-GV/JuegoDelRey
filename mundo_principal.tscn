@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=42 format=4 uid="uid://1l03d6grnj10"]
 
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 [ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://coanpgurc5bo7" path="res://assets/rey.png" id="4_ns3yf"]
 [ext_resource type="Texture2D" uid="uid://bdbgdjgnk1pc7" path="res://assets/mujer_trabajadora.png" id="5_w8js2"]
 [ext_resource type="Texture2D" uid="uid://3yno6tw750ow" path="res://assets/images/shadow.png" id="6_e7lw8"]
+[ext_resource type="Script" uid="uid://cakwraxwbrl87" path="res://scripts/paseo_rey.gd" id="6_l0ppo"]
 [ext_resource type="Texture2D" uid="uid://c86tkbg7om6kf" path="res://assets/joven.png" id="6_qoco5"]
 [ext_resource type="PackedScene" uid="uid://b824o34rcxeeb" path="res://scenes/bowl.tscn" id="7_nlvhg"]
 [ext_resource type="Texture2D" uid="uid://en4sbonkoa0s" path="res://assets/nino_discapacitado.png" id="7_ns3yf"]
@@ -268,6 +269,7 @@ environment = SubResource("Environment_w8js2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.106, 3)
 material_override = SubResource("ShaderMaterial_wpuaa")
 texture = ExtResource("4_ns3yf")
+script = ExtResource("6_l0ppo")
 
 [node name="BlobShadow" type="Sprite3D" parent="Rey"]
 transform = Transform3D(3.5, 0, 0, 0, -1.5298986e-07, 3.5, 0, -3.5, -1.5298986e-07, 0, 2.406, 3)
