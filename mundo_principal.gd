@@ -139,15 +139,15 @@ func repartir_dinero(rol_id: String) -> void:
 			pos_aparicion.x += randf_range(-0.5, 0.5)
 			pos_aparicion.z += randf_range(-0.5, 0.5)
 
-			nueva_moneda.global_position = pos_aparicion
 			add_child(nueva_moneda)
+			nueva_moneda.global_position = pos_aparicion
 
 			roles[rol_id].monedas.push_back(nueva_moneda)
 
 			var spark: GPUParticles3D = Spark.instantiate()
+			add_child(spark)
 			spark.global_position = pos_aparicion
 			spark.emitting = true
-			add_child(spark)
 
 
 		print("Se ha dado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
@@ -170,9 +170,9 @@ func remover_dinero(rol_id: String) -> void:
 		roles[rol_id].monedas.erase(moneda)
 
 		var poof: GPUParticles3D = Poof.instantiate()
+		add_child(poof)
 		poof.global_position = pos_moneda
 		poof.emitting = true
-		add_child(poof)
 
 		print("Se ha quitado 1 moneda a %s. Dinero Restante: %s" % [rol_id, dinero_rey])
 	else:
