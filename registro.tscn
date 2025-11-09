@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtnln6cfst3s5"]
+
+[ext_resource type="Texture2D" uid="uid://dhgrye8qtou5i" path="res://assets/ui/bookstyles/travel/UI_TravelBook_BookCover01a.png" id="1_il02f"]
+[ext_resource type="Texture2D" uid="uid://c7jdeuj5qlle5" path="res://assets/ui/bookstyles/travel/UI_TravelBook_BookPageLeft01a.png" id="2_tfjsw"]
+[ext_resource type="Texture2D" uid="uid://cab0jm81ids4p" path="res://assets/ui/bookstyles/travel/UI_TravelBook_BookPageRight01a.png" id="3_3m4n6"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+metadata/_edit_vertical_guides_ = [1152.0, 576.0]
+
+[node name="Book" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchor_right = 0.2
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Cover" type="NinePatchRect" parent="Book"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_il02f")
+region_rect = Rect2(0, 0, 224, 160)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="PageLeft" type="NinePatchRect" parent="Book/Cover"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 7.9999995
+offset_bottom = -7.8000107
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tfjsw")
+region_rect = Rect2(0, 0, 104, 147)
+patch_margin_left = 12
+patch_margin_top = 4
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="PageRight" type="NinePatchRect" parent="Book/Cover"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.9999995
+offset_right = -10.0
+offset_bottom = -7.8000107
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3m4n6")
+region_rect = Rect2(0, 0, 104, 147)
+patch_margin_left = 8
+patch_margin_top = 4
+patch_margin_right = 12
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
