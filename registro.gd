@@ -33,13 +33,14 @@ func _on_btn_continuar_pressed():
 	if nombre.is_empty():
 		return
 
-	var edad := int(txt_edad.value)
-	var genero: String = selected_gender
-	var _textura: Texture = selected_character
+	GameData.player_name = nombre
+	GameData.player_age = int(txt_edad.value)
+	GameData.player_gender = selected_gender
+	GameData.player_character_path = selected_character.resource_path
 
-	print("nombre:", nombre)
-	print("edad:", edad)
-	print("género:", genero)
+	print(GameData.player_character_path)
+
+	get_tree().change_scene_to_file("res://mundo_principal.tscn")
 
 
 func _on_character_selector_character_selected(character_texture: Texture) -> void:

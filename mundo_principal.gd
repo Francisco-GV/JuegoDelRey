@@ -15,6 +15,7 @@ var camara_rotacion_base: Vector3
 var roles: Dictionary[String, Rol]
 
 # Sprites 3D
+@onready var rey: Sprite3D = $Rey
 @onready var rol_madre: Sprite3D = $RolMadre
 @onready var rol_anciano: Sprite3D = $RolAnciano
 @onready var rol_nino_pobre: Sprite3D = $RolNinoPobre
@@ -38,6 +39,8 @@ enum Posicion { ARRIBA, ABAJO }
 func _ready() -> void:
 	if camara:
 		camara_rotacion_base = camara.rotation
+
+	inicializar_rey()
 
 	roles = {
 		"Madre": Rol.new(rol_madre, ctrl_madre),
@@ -77,6 +80,18 @@ func _process(delta: float) -> void:
 		)
 
 		camara.rotation = camara.rotation.lerp(rot_objetivo, suavizado_mouse_camara * delta)
+
+
+func inicializar_rey() -> void:
+	var character_path = GameData.player_character_path
+	if character_path.is_empty():
+		print("Error: no se encontró GameData.player_character_path.")
+		character_path = "res://assets/rey.png"
+
+	var selected_texture: Texture2D = load(character_path)
+
+	rey.texture = selected_texture
+	rey.material_override.set_shader_parameter("u_sprite_texture", selected_texture)
 
 
 func actualizar_etiqueta_dinero() -> void:

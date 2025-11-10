@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DB="*res://database_manager.gd"
+GameData="*res://scripts/game_data.gd"
 
 [editor_plugins]
 
@@ -25,5 +26,5 @@ enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
+anti_aliasing/quality/screen_space_aa=2
