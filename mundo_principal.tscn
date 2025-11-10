@@ -291,6 +291,14 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolMadre" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.27, 1.75)
 
+[node name="Label3D" type="Label3D" parent="RolMadre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85, 0)
+billboard = 2
+texture_filter = 5
+text = "Mamá con 3 hijos"
+font_size = 102
+outline_size = 28
+
 [node name="RolAnciano" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.15, 17.5)
 material_override = SubResource("ShaderMaterial_qoco5")
@@ -303,6 +311,14 @@ texture = ExtResource("6_e7lw8")
 
 [node name="Bowl" parent="RolAnciano" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.99, 1.75)
+
+[node name="Label3D" type="Label3D" parent="RolAnciano"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.459948, 0)
+billboard = 2
+texture_filter = 5
+text = "Anciano"
+font_size = 102
+outline_size = 28
 
 [node name="RolNinoPobre" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.114818, 17.5)
@@ -318,6 +334,14 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolNinoPobre" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.47, 1.75)
 
+[node name="Label3D" type="Label3D" parent="RolNinoPobre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.845347, 0)
+billboard = 2
+texture_filter = 5
+text = "Niño pobre"
+font_size = 102
+outline_size = 28
+
 [node name="RolMujerTrabajadora" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.614818, 17.5)
 material_override = SubResource("ShaderMaterial_j6w0q")
@@ -330,6 +354,14 @@ texture = ExtResource("6_e7lw8")
 
 [node name="Bowl" parent="RolMujerTrabajadora" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.97, 1.75)
+
+[node name="Label3D" type="Label3D" parent="RolMujerTrabajadora"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15, 0)
+billboard = 2
+texture_filter = 5
+text = "Mujer trabajadora"
+font_size = 102
+outline_size = 28
 
 [node name="RolJoven" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.614818, 17.5)
@@ -345,6 +377,16 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolJoven" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.97, 1.75)
 
+[node name="Label3D" type="Label3D" parent="RolJoven"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5695777, 0)
+billboard = 2
+texture_filter = 5
+text = "Joven bien
+vestido"
+font_size = 102
+outline_size = 28
+line_spacing = -30.0
+
 [node name="RolNinoDiscapacitado" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.6612606, 17.5)
 material_override = SubResource("ShaderMaterial_nlvhg")
@@ -358,6 +400,14 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolNinoDiscapacitado" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.45, 1.75)
 
+[node name="Label3D" type="Label3D" parent="RolNinoDiscapacitado"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8934627, 0)
+billboard = 2
+texture_filter = 5
+text = "Niño discapacitado"
+font_size = 102
+outline_size = 28
+
 [node name="RolPerro" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.6598, 17.5)
 material_override = SubResource("ShaderMaterial_l6s8d")
@@ -370,6 +420,14 @@ texture = ExtResource("6_e7lw8")
 
 [node name="Bowl" parent="RolPerro" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.46, 1.75)
+
+[node name="Label3D" type="Label3D" parent="RolPerro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2499595, 0)
+billboard = 2
+texture_filter = 5
+text = "Perro"
+font_size = 102
+outline_size = 28
 
 [node name="UI" type="CanvasLayer" parent="."]
 
