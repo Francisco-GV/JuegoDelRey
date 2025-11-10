@@ -33,6 +33,15 @@ var roles: Dictionary[String, Rol]
 @onready var ctrl_nino_discapacitado: Container = $UI/Control/CtrlNinoDiscapacitado
 @onready var ctrl_perro: Container = $UI/Control/CtrlPerro
 
+# Contadores
+@onready var counter_madre: Label3D = $RolMadre/Bowl/Counter
+@onready var counter_anciano: Label3D = $RolAnciano/Bowl/Counter
+@onready var counter_nino_pobre: Label3D = $RolNinoPobre/Bowl/Counter
+@onready var counter_mujer_trabajadora: Label3D = $RolMujerTrabajadora/Bowl/Counter
+@onready var counter_joven: Label3D = $RolJoven/Bowl/Counter
+@onready var counter_nino_discapacitado: Label3D = $RolNinoDiscapacitado/Bowl/Counter
+@onready var counter_perro: Label3D = $RolPerro/Bowl/Counter
+
 enum Posicion { ARRIBA, ABAJO }
 
 
@@ -43,13 +52,13 @@ func _ready() -> void:
 	inicializar_rey()
 
 	roles = {
-		"Madre": Rol.new(rol_madre, ctrl_madre),
-		"Anciano": Rol.new(rol_anciano, ctrl_anciano),
-		"NinoPobre": Rol.new(rol_nino_pobre, ctrl_nino_pobre),
-		"MujerTrabajadora": Rol.new(rol_mujer_trabajadora, ctrl_mujer_trabajadora),
-		"Joven": Rol.new(rol_joven, ctrl_joven),
-		"NinoDiscapacitado": Rol.new(rol_nino_discapacitado, ctrl_nino_discapacitado),
-		"Perro": Rol.new(rol_perro, ctrl_perro),
+		"Madre": Rol.new(rol_madre, ctrl_madre, counter_madre),
+		"Anciano": Rol.new(rol_anciano, ctrl_anciano, counter_anciano),
+		"NinoPobre": Rol.new(rol_nino_pobre, ctrl_nino_pobre, counter_nino_pobre),
+		"MujerTrabajadora": Rol.new(rol_mujer_trabajadora, ctrl_mujer_trabajadora, counter_mujer_trabajadora),
+		"Joven": Rol.new(rol_joven, ctrl_joven, counter_joven),
+		"NinoDiscapacitado": Rol.new(rol_nino_discapacitado, ctrl_nino_discapacitado, counter_nino_discapacitado),
+		"Perro": Rol.new(rol_perro, ctrl_perro, counter_perro),
 	}
 
 	actualizar_etiqueta_dinero()
@@ -96,6 +105,13 @@ func inicializar_rey() -> void:
 
 func actualizar_etiqueta_dinero() -> void:
 	etiqueta_contador.text = "Dinero Restante: " + str(dinero_rey)
+
+	actualizar_label_3D()
+
+
+func actualizar_label_3D() -> void:
+	for rol in roles:
+		roles[rol].contador.text = str(roles[rol].dinero)
 
 
 func actualizar_posicion_controles(personaje: Sprite3D, controles: Container, posicion: Posicion = Posicion.ARRIBA) -> void:

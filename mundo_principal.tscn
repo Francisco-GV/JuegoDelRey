@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=43 format=4 uid="uid://1l03d6grnj10"]
 
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 [ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
@@ -61,6 +61,8 @@ shader_parameter/u_outline_size = 10.0
 shader_parameter/u_outline_softness = 1.0
 shader_parameter/u_enable_billboard_y = true
 shader_parameter/u_flip_h = -1.0
+
+[sub_resource type="FontVariation" id="FontVariation_x6w6c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qoco5"]
 render_priority = 0
@@ -255,12 +257,14 @@ shadow_opacity = 0.8
 directional_shadow_fade_start = 1.0
 directional_shadow_max_distance = 400.0
 
-[node name="CoinsLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 15, 35.935)
-light_energy = 0.6
-light_angular_distance = 45.0
-light_specular = 0.05
-sky_mode = 1
+[node name="CoinsLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 15.871855, 31.377361)
+layers = 2
+light_energy = 12.0
+light_size = 45.0
+light_specular = 1.5
+light_cull_mask = 4294966274
+omni_range = 26.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w8js2")
@@ -291,9 +295,17 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolMadre" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.27, 1.75)
 
+[node name="Counter" type="Label3D" parent="RolMadre/Bowl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.2)
+billboard = 1
+text = "0"
+font = SubResource("FontVariation_x6w6c")
+font_size = 128
+outline_size = 64
+
 [node name="Label3D" type="Label3D" parent="RolMadre"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85, 0)
-billboard = 2
+billboard = 1
 texture_filter = 5
 text = "Mamá con 3 hijos"
 font_size = 102
@@ -312,9 +324,17 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolAnciano" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.99, 1.75)
 
+[node name="Counter" type="Label3D" parent="RolAnciano/Bowl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.2)
+billboard = 1
+text = "0"
+font = SubResource("FontVariation_x6w6c")
+font_size = 128
+outline_size = 64
+
 [node name="Label3D" type="Label3D" parent="RolAnciano"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.459948, 0)
-billboard = 2
+billboard = 1
 texture_filter = 5
 text = "Anciano"
 font_size = 102
@@ -334,9 +354,17 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolNinoPobre" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.47, 1.75)
 
+[node name="Counter" type="Label3D" parent="RolNinoPobre/Bowl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.2)
+billboard = 1
+text = "0"
+font = SubResource("FontVariation_x6w6c")
+font_size = 128
+outline_size = 64
+
 [node name="Label3D" type="Label3D" parent="RolNinoPobre"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.845347, 0)
-billboard = 2
+billboard = 1
 texture_filter = 5
 text = "Niño pobre"
 font_size = 102
@@ -355,9 +383,17 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolMujerTrabajadora" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.97, 1.75)
 
+[node name="Counter" type="Label3D" parent="RolMujerTrabajadora/Bowl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.2)
+billboard = 1
+text = "0"
+font = SubResource("FontVariation_x6w6c")
+font_size = 128
+outline_size = 64
+
 [node name="Label3D" type="Label3D" parent="RolMujerTrabajadora"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15, 0)
-billboard = 2
+billboard = 1
 texture_filter = 5
 text = "Mujer trabajadora"
 font_size = 102
@@ -377,9 +413,17 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolJoven" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.97, 1.75)
 
+[node name="Counter" type="Label3D" parent="RolJoven/Bowl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.2)
+billboard = 1
+text = "0"
+font = SubResource("FontVariation_x6w6c")
+font_size = 128
+outline_size = 64
+
 [node name="Label3D" type="Label3D" parent="RolJoven"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5695777, 0)
-billboard = 2
+billboard = 1
 texture_filter = 5
 text = "Joven bien
 vestido"
@@ -400,9 +444,17 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolNinoDiscapacitado" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.45, 1.75)
 
+[node name="Counter" type="Label3D" parent="RolNinoDiscapacitado/Bowl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.2)
+billboard = 1
+text = "0"
+font = SubResource("FontVariation_x6w6c")
+font_size = 128
+outline_size = 64
+
 [node name="Label3D" type="Label3D" parent="RolNinoDiscapacitado"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8934627, 0)
-billboard = 2
+billboard = 1
 texture_filter = 5
 text = "Niño discapacitado"
 font_size = 102
@@ -421,9 +473,17 @@ texture = ExtResource("6_e7lw8")
 [node name="Bowl" parent="RolPerro" instance=ExtResource("7_nlvhg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.46, 1.75)
 
+[node name="Counter" type="Label3D" parent="RolPerro/Bowl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.2)
+billboard = 1
+text = "0"
+font = SubResource("FontVariation_x6w6c")
+font_size = 128
+outline_size = 64
+
 [node name="Label3D" type="Label3D" parent="RolPerro"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2499595, 0)
-billboard = 2
+billboard = 1
 texture_filter = 5
 text = "Perro"
 font_size = 102
