@@ -1,6 +1,7 @@
 @tool
 extends TextureButton
 
+@export var gender_value: String = ""
 
 @export var icon_texture: Texture:
 	set(value):

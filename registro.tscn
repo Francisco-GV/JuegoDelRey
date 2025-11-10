@@ -1,5 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dtnln6cfst3s5"]
 
+[ext_resource type="Script" uid="uid://rddwbuhcj7uq" path="res://registro.gd" id="1_cui0e"]
 [ext_resource type="Texture2D" uid="uid://dhgrye8qtou5i" path="res://assets/ui/bookstyles/travel/UI_TravelBook_BookCover01a.png" id="1_il02f"]
 [ext_resource type="Texture2D" uid="uid://c7jdeuj5qlle5" path="res://assets/ui/bookstyles/travel/UI_TravelBook_BookPageLeft01a.png" id="2_tfjsw"]
 [ext_resource type="Texture2D" uid="uid://cab0jm81ids4p" path="res://assets/ui/bookstyles/travel/UI_TravelBook_BookPageRight01a.png" id="3_3m4n6"]
@@ -7,13 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cgl0m5pfy4sun" path="res://scenes/gender_button.tscn" id="5_6i1wi"]
 [ext_resource type="Texture2D" uid="uid://cf3th2dl7uhdo" path="res://assets/images/female.png" id="6_0j2br"]
 [ext_resource type="Texture2D" uid="uid://lrhc1akyymcr" path="res://assets/images/male.png" id="6_baoqt"]
+[ext_resource type="ButtonGroup" uid="uid://b8o6amwhr1bfq" path="res://components/gender_group.tres" id="6_ft5pm"]
 [ext_resource type="PackedScene" uid="uid://bxxn3r38kradp" path="res://scenes/character_selector.tscn" id="8_88ep5"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_88ep5"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_ft5pm"]
-
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_cui0e")
+gender_group = ExtResource("6_ft5pm")
 metadata/_edit_vertical_guides_ = [1152.0, 576.0, 75.0, 1077.0]
 metadata/_edit_horizontal_guides_ = [65.0, 584.0]
 
@@ -156,13 +156,15 @@ alignment = 1
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
-button_group = SubResource("ButtonGroup_88ep5")
+button_group = ExtResource("6_ft5pm")
+gender_value = "Hombre"
 icon_texture = ExtResource("6_baoqt")
 
 [node name="FemaleButton" parent="Scale1/Left/VBoxContainer/GenderSelector" instance=ExtResource("5_6i1wi")]
 layout_mode = 2
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ft5pm")
+button_group = ExtResource("6_ft5pm")
+gender_value = "Mujer"
 icon_texture = ExtResource("6_0j2br")
 
 [node name="Right" type="Control" parent="Scale1"]
@@ -176,9 +178,9 @@ offset_bottom = -39.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Scale1/Right"]
+[node name="VBoxContainer" type="Control" parent="Scale1/Right"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 25.0
@@ -189,11 +191,24 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LblPersonaje" type="Label" parent="Scale1/Right/VBoxContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
 text = "Selecciona tu rey:"
 horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
 
 [node name="CharacterSelector" parent="Scale1/Right/VBoxContainer" instance=ExtResource("8_88ep5")]
-custom_minimum_size = Vector2(0, 350)
-layout_mode = 2
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.9
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
