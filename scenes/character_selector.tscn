@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxxn3r38kradp"]
+
+[ext_resource type="Texture2D" uid="uid://co644capir1rh" path="res://assets/ui/bookstyles/travel/UI_TravelBook_ButtonArrow01a.png" id="1_og5k4"]
+[ext_resource type="Texture2D" uid="uid://bq7kq3gfikdnl" path="res://assets/ui/bookstyles/travel/UI_TravelBook_Popup03a.png" id="2_wamhw"]
+
+[node name="CharacterSelector" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 280.0
+
+[node name="LeftArrow" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -21.0
+offset_right = 50.0
+offset_bottom = 21.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_og5k4")
+stretch_mode = 5
+flip_h = true
+
+[node name="CharacterDisplay" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(200, 240)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_right = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wamhw")
+region_rect = Rect2(0, 0, 62, 30)
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="RightArrow" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -21.0
+offset_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_og5k4")
+stretch_mode = 5
