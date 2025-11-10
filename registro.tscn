@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtnln6cfst3s5"]
+[gd_scene load_steps=12 format=3 uid="uid://dtnln6cfst3s5"]
 
 [ext_resource type="Script" uid="uid://rddwbuhcj7uq" path="res://registro.gd" id="1_cui0e"]
 [ext_resource type="Texture2D" uid="uid://dhgrye8qtou5i" path="res://assets/ui/bookstyles/travel/UI_TravelBook_BookCover01a.png" id="1_il02f"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://lrhc1akyymcr" path="res://assets/images/male.png" id="6_baoqt"]
 [ext_resource type="ButtonGroup" uid="uid://b8o6amwhr1bfq" path="res://components/gender_group.tres" id="6_ft5pm"]
 [ext_resource type="PackedScene" uid="uid://bxxn3r38kradp" path="res://scenes/character_selector.tscn" id="8_88ep5"]
+[ext_resource type="Texture2D" uid="uid://coanpgurc5bo7" path="res://assets/rey.png" id="11_c632f"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_cui0e")
@@ -212,3 +213,4 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+character_assets = Array[Texture]([ExtResource("11_c632f")])
