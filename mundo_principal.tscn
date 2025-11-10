@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cs7tq20yl0jhf" path="res://assets/anciano.png" id="3_5ceki"]
 [ext_resource type="LightmapGIData" uid="uid://mugrxtbtul1w" path="res://bakes/mundo_principal.lmbake" id="3_l6s8d"]
 [ext_resource type="Texture2D" uid="uid://blwyxb5seay3v" path="res://assets/nino_pobre.png" id="4_bew0i"]
-[ext_resource type="Texture2D" uid="uid://coanpgurc5bo7" path="res://assets/rey.png" id="4_ns3yf"]
+[ext_resource type="Texture2D" uid="uid://0wfivgoy73q2" path="res://assets/images/reyes/Hombre/rey_1.png" id="5_l0ppo"]
 [ext_resource type="Texture2D" uid="uid://bdbgdjgnk1pc7" path="res://assets/mujer_trabajadora.png" id="5_w8js2"]
 [ext_resource type="Texture2D" uid="uid://3yno6tw750ow" path="res://assets/images/shadow.png" id="6_e7lw8"]
 [ext_resource type="Script" uid="uid://cakwraxwbrl87" path="res://scripts/paseo_rey.gd" id="6_l0ppo"]
@@ -45,7 +45,7 @@ reflected_light_source = 1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wpuaa"]
 render_priority = 0
 shader = ExtResource("2_w8js2")
-shader_parameter/u_sprite_texture = ExtResource("4_ns3yf")
+shader_parameter/u_sprite_texture = ExtResource("5_l0ppo")
 shader_parameter/u_line_color = Color(1, 1, 1, 1)
 shader_parameter/u_outline_size = 10.000000475
 shader_parameter/u_outline_softness = 1.0
@@ -268,7 +268,7 @@ environment = SubResource("Environment_w8js2")
 [node name="Rey" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.106, 3)
 material_override = SubResource("ShaderMaterial_wpuaa")
-texture = ExtResource("4_ns3yf")
+texture = ExtResource("5_l0ppo")
 script = ExtResource("6_l0ppo")
 
 [node name="BlobShadow" type="Sprite3D" parent="Rey"]

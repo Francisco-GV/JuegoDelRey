@@ -86,7 +86,7 @@ func inicializar_rey() -> void:
 	var character_path = GameData.player_character_path
 	if character_path.is_empty():
 		print("Error: no se encontró GameData.player_character_path.")
-		character_path = "res://assets/rey.png"
+		character_path = "res://assets/images/reyes/Hombre/rey_1.png"
 
 	var selected_texture: Texture2D = load(character_path)
 
