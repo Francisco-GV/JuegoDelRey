@@ -247,9 +247,10 @@ transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.965
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 quality = 2
+supersampling = true
 light_data = ExtResource("3_l6s8d")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="SunLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.49999997, 0.5670222, -0.65458834, 0, 0.7558535, 0.6547408, 0.86602545, -0.32737038, 0.3779267, -122.45807, 89.93122, 17)
 light_energy = 1.5
 light_bake_mode = 1
@@ -257,14 +258,20 @@ shadow_opacity = 0.8
 directional_shadow_fade_start = 1.0
 directional_shadow_max_distance = 400.0
 
-[node name="CoinsLight" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 15.871855, 31.377361)
+[node name="CoinsLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5954685, 31.377361)
 layers = 2
-light_energy = 12.0
-light_size = 45.0
-light_specular = 1.5
+light_energy = 0.75
 light_cull_mask = 4294966274
-omni_range = 26.0
+directional_shadow_mode = 0
+sky_mode = 1
+
+[node name="InsideLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.131222, 27.937378)
+light_energy = 16.0
+light_cull_mask = 4294966273
+omni_range = 85.0
+omni_attenuation = 0.8
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w8js2")
