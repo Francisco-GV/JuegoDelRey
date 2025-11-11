@@ -144,6 +144,7 @@ horizontal_alignment = 1
 
 [node name="TxtNombre" type="LineEdit" parent="Scale1/Left/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 placeholder_text = "Nombre..."
 alignment = 1
 caret_blink = true
@@ -157,6 +158,7 @@ horizontal_alignment = 1
 layout_mode = 2
 rounded = true
 alignment = 1
+select_all_on_focus = true
 
 [node name="LblGenero" type="Label" parent="Scale1/Left/VBoxContainer"]
 layout_mode = 2
@@ -227,7 +229,7 @@ anchor_bottom = 1.0
 offset_left = 5.0
 offset_top = 50.0
 offset_right = -5.0
-offset_bottom = -50.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 character_assets = Array[Texture]([ExtResource("11_c2cfx"), ExtResource("12_v2t7h"), ExtResource("13_p7ycy"), ExtResource("14_4w4q5"), ExtResource("15_a6d1t"), ExtResource("16_yuwkj"), ExtResource("17_28ksq"), ExtResource("18_ft0ra")])

@@ -517,14 +517,14 @@ offset_right = 236.0
 offset_bottom = 586.0
 
 [node name="BtnAgregar" type="Button" parent="UI/Control/CtrlMadre"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
 [node name="BtnRemover" type="Button" parent="UI/Control/CtrlMadre"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 text = "-
 "
@@ -537,14 +537,14 @@ offset_right = 356.0
 offset_bottom = 586.0
 
 [node name="BtnAgregar" type="Button" parent="UI/Control/CtrlAnciano"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
 [node name="BtnRemover" type="Button" parent="UI/Control/CtrlAnciano"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 text = "-
 "
@@ -557,14 +557,14 @@ offset_right = 476.0
 offset_bottom = 586.0
 
 [node name="BtnAgregar" type="Button" parent="UI/Control/CtrlNinoPobre"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
 [node name="BtnRemover" type="Button" parent="UI/Control/CtrlNinoPobre"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 text = "-
 "
@@ -577,14 +577,14 @@ offset_right = 596.0
 offset_bottom = 586.0
 
 [node name="BtnAgregar" type="Button" parent="UI/Control/CtrlMujerTrabajadora"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
 [node name="BtnRemover" type="Button" parent="UI/Control/CtrlMujerTrabajadora"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 text = "-
 "
@@ -597,14 +597,14 @@ offset_right = 716.0
 offset_bottom = 586.0
 
 [node name="BtnAgregar" type="Button" parent="UI/Control/CtrlJoven"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
 [node name="BtnRemover" type="Button" parent="UI/Control/CtrlJoven"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 text = "-
 "
@@ -617,14 +617,14 @@ offset_right = 836.0
 offset_bottom = 586.0
 
 [node name="BtnAgregar" type="Button" parent="UI/Control/CtrlNinoDiscapacitado"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
 [node name="BtnRemover" type="Button" parent="UI/Control/CtrlNinoDiscapacitado"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 text = "-
 "
@@ -637,14 +637,14 @@ offset_right = 956.0
 offset_bottom = 586.0
 
 [node name="BtnAgregar" type="Button" parent="UI/Control/CtrlPerro"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 text = "+"
 
 [node name="BtnRemover" type="Button" parent="UI/Control/CtrlPerro"]
-custom_minimum_size = Vector2(36, 36)
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 2
 text = "-
 "
