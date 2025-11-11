@@ -26,3 +26,7 @@ func _ready() -> void:
 		for rol in roles_columnas:
 			var dinero_reparto: int = partida[roles_columnas[rol]]
 			print("\t\tReparto a %s: %d" % [rol, dinero_reparto])
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://registro.tscn")

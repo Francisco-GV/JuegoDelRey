@@ -228,4 +228,4 @@ func _on_btn_confirmar_pressed() -> void:
 
 	DB.guardar_partida(dinero_rey, dinero_repartido)
 
-	reiniciar_juego()
+	get_tree().change_scene_to_file("res://escena_resultados.tscn")

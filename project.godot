@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Juego del Rey"
-run/main_scene="uid://1l03d6grnj10"
+run/main_scene="uid://dtnln6cfst3s5"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 DB="*res://database_manager.gd"
 GameData="*res://scripts/game_data.gd"
+
+[display]
+
+window/stdout/print_fps=true
+window/max_fps=0
 
 [editor_plugins]
 
