@@ -223,6 +223,7 @@ shadow_mesh = SubResource("ArrayMesh_b84hs")
 
 [node name="MundoPrincipal" type="Node3D"]
 script = ExtResource("1_226u2")
+dinero_rey = 10
 
 [node name="ThroneRoom" parent="." instance=ExtResource("2_nlvhg")]
 transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 0, -1.5, 30)
