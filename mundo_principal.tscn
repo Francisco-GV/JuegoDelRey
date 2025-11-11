@@ -305,6 +305,7 @@ outline_size = 64
 
 [node name="Label3D" type="Label3D" parent="RolMadre"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85, 0)
+visible = false
 billboard = 1
 texture_filter = 5
 text = "Mamá con 3 hijos"
@@ -334,6 +335,7 @@ outline_size = 64
 
 [node name="Label3D" type="Label3D" parent="RolAnciano"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.459948, 0)
+visible = false
 billboard = 1
 texture_filter = 5
 text = "Anciano"
@@ -364,6 +366,7 @@ outline_size = 64
 
 [node name="Label3D" type="Label3D" parent="RolNinoPobre"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.845347, 0)
+visible = false
 billboard = 1
 texture_filter = 5
 text = "Niño pobre"
@@ -393,6 +396,7 @@ outline_size = 64
 
 [node name="Label3D" type="Label3D" parent="RolMujerTrabajadora"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15, 0)
+visible = false
 billboard = 1
 texture_filter = 5
 text = "Mujer trabajadora"
@@ -423,6 +427,7 @@ outline_size = 64
 
 [node name="Label3D" type="Label3D" parent="RolJoven"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5695777, 0)
+visible = false
 billboard = 1
 texture_filter = 5
 text = "Joven bien
@@ -454,6 +459,7 @@ outline_size = 64
 
 [node name="Label3D" type="Label3D" parent="RolNinoDiscapacitado"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8934627, 0)
+visible = false
 billboard = 1
 texture_filter = 5
 text = "Niño discapacitado"
@@ -483,6 +489,7 @@ outline_size = 64
 
 [node name="Label3D" type="Label3D" parent="RolPerro"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2499595, 0)
+visible = false
 billboard = 1
 texture_filter = 5
 text = "Perro"
