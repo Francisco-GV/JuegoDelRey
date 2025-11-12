@@ -25,18 +25,19 @@ func _ready() -> void:
          ON p.id_jugador = j.id
        JOIN jugador_monedas AS m
          ON j.id_monedas = m.id
+	WHERE p.id = ?
     """
 
-	var success: bool = DB.db.query(query)
+	var success: bool = DB.db.query_with_bindings(query, [DB.db.last_insert_rowid])
 
 	if not success:
 		print("Error: No se pudo ejecutar la consulta para obtener los resultados.")
 		return
 
-	var results = DB.db.query_result
+	var ultima_partida = DB.db.query_result
 
-	print("Consulta de resultados ejecutada con éxito. Procesando datos...")
-	print(results)
+	print("Consulta de última partida ejecutada con éxito. Procesando datos...")
+	print(ultima_partida)
 
 
 func _on_button_pressed() -> void:
