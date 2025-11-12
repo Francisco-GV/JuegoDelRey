@@ -6,26 +6,37 @@ func _ready() -> void:
 		print("Error: El gestor de base de datos no está inicializado")
 		return
 
-	var datos_obtenidos: Array = DB.db.select_rows("partidas", "1=1", ["*"])
+	var query: String = """
+    SELECT j.nombre         AS "nombre",
+       j.edad               AS "edad",
+       j.genero             AS "genero",
+       j.imagen             AS "imagen",
+       m.rey                AS "monedas_rey",
+       m.madre              AS "monedas_madre",
+       m.anciano            AS "monedas_anciano",
+       m.nino_pobre         AS "monedas_nino_pobre",
+       m.mujer_trabajadora  AS "monedas_mujer_trabajadora",
+       m.joven              AS "monedas_joven",
+       m.nino_discapacitado AS "monedas_nino_discapacitado",
+       m.perro              AS "monedas_perro",
+       p.fecha_guardado     AS "fecha_guardado"
+    FROM partida AS p
+       JOIN jugador AS j
+         ON p.id_jugador = j.id
+       JOIN jugador_monedas AS m
+         ON j.id_monedas = m.id
+    """
 
-	var roles_columnas: Dictionary = {
-		"Madre": "dinero_madre",
-		"Anciano": "dinero_anciano",
-		"Nino Pobre": "dinero_nino_pobre",
-		"Mujer Trabajadora": "dinero_mujer_trabajadora",
-		"Joven": "dinero_joven",
-		"Nino Discapacitado": "dinero_nino_discapacitado",
-		"Perro": "dinero_perro",
-	}
+	var success: bool = DB.db.query(query)
 
-	print(" --- Resultados --- ")
-	print("Total de partidas jugadas: ", datos_obtenidos.size())
+	if not success:
+		print("Error: No se pudo ejecutar la consulta para obtener los resultados.")
+		return
 
-	for partida in datos_obtenidos:
-		print("\n\tPartida ID: %d. Rey se quedó con: %d" % [partida["id"], partida["dinero_rey"]])
-		for rol in roles_columnas:
-			var dinero_reparto: int = partida[roles_columnas[rol]]
-			print("\t\tReparto a %s: %d" % [rol, dinero_reparto])
+	var results = DB.db.query_result
+
+	print("Consulta de resultados ejecutada con éxito. Procesando datos...")
+	print(results)
 
 
 func _on_button_pressed() -> void:
