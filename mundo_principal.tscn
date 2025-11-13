@@ -138,10 +138,11 @@ debug_color = Color(0.5564387, 0.3984954, 1, 0.41960785)
 transform = Transform3D(0.63808274, 0, 0.76996785, 0, 1, 0, -0.76996785, 0, 0.63808274, 62.0105, 17.092184, 144.40764)
 curve = SubResource("Curve3D_l6s8d")
 
-[node name="CamPathFollow3D" type="PathFollow3D" parent="CamPath3D"]
+[node name="CamPathFollow3D" type="PathFollow3D" parent="CamPath3D" node_paths=PackedStringArray("ui")]
 transform = Transform3D(0.7070999, 0, 0.7070955, 0, 0.9999982, 0, -0.7070998, 0, 0.7070956, 0, 0, 0)
 loop = false
 script = ExtResource("3_wpuaa")
+ui = NodePath("../../UI")
 
 [node name="CamaraMovil" type="Camera3D" parent="CamPath3D/CamPathFollow3D"]
 transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, 0, 0, 0)

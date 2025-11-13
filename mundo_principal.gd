@@ -48,6 +48,8 @@ enum Posicion { ARRIBA, ABAJO }
 
 
 func _ready() -> void:
+	ui.hide() # Se mostrará cuando la cámara fija sea visible
+
 	if camara:
 		camara_rotacion_base = camara.rotation
 

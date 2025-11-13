@@ -1,6 +1,7 @@
 extends PathFollow3D
 
 @export var speed: float = 50.0
+@export var ui: CanvasLayer
 @onready var camara_fija = $"../../CamaraFija"
 @onready var camara_movil: Camera3D = $CamaraMovil
 
@@ -26,5 +27,6 @@ func _process(delta):
 
 		camara_movil.current = false
 		camara_fija.current = true
+		ui.show()
 
 		GameData.intro_activa = false
