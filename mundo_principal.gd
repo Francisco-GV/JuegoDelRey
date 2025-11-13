@@ -3,8 +3,10 @@ extends Node3D
 const Moneda = preload("res://scenes/moneda.tscn")
 const Spark = preload("res://scenes/effects/spark.tscn")
 const Poof = preload("res://scenes/effects/poof.tscn")
+const Resultados = preload("res://escena_resultados.tscn")
 
 @export var dinero_rey: int = 20
+@onready var ui: CanvasLayer = $UI
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
 @onready var camara: Camera3D = $Camera3D
 
@@ -228,4 +230,7 @@ func _on_btn_confirmar_pressed() -> void:
 
 	DB.guardar_partida(dinero_rey, dinero_repartido)
 
-	get_tree().change_scene_to_file("res://escena_resultados.tscn")
+	ui.hide()
+
+	var resultados = Resultados.instantiate()
+	add_child(resultados)
