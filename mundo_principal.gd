@@ -8,7 +8,7 @@ const Resultados = preload("res://escena_resultados.tscn")
 @export var dinero_rey: int = 20
 @onready var ui: CanvasLayer = $UI
 @onready var etiqueta_contador: Label = $UI/Control/ContadorDinero
-@onready var camara: Camera3D = $Camera3D
+@onready var camara: Camera3D = $CamaraFija
 
 var camara_rotacion_base: Vector3
 @export var sensibilidad_mouse_camara: float = 0.05
@@ -76,7 +76,7 @@ func _process(delta: float) -> void:
 	actualizar_posicion_controles(rol_perro, ctrl_perro)
 
 
-	if camara:
+	if not GameData.intro_activa and camara:
 		var tamano_viewport = get_viewport().size
 		var pos_mouse = get_viewport().get_mouse_position()
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://1l03d6grnj10"]
+[gd_scene load_steps=30 format=3 uid="uid://1l03d6grnj10"]
 
 [ext_resource type="Script" uid="uid://cyy4tstt2xups" path="res://mundo_principal.gd" id="1_226u2"]
 [ext_resource type="Texture2D" uid="uid://c6f2im784bn6w" path="res://assets/madre.png" id="2_5ceki"]
 [ext_resource type="PackedScene" uid="uid://djxt3uu0e0te5" path="res://scenes/escenario.tscn" id="2_l6s8d"]
 [ext_resource type="Shader" uid="uid://ccp1t61bhmllx" path="res://shaders/PaperSprite3D.gdshader" id="2_w8js2"]
 [ext_resource type="Texture2D" uid="uid://cs7tq20yl0jhf" path="res://assets/anciano.png" id="3_5ceki"]
+[ext_resource type="Script" uid="uid://5mysy60vgvsi" path="res://scripts/cam_path_follow_3d.gd" id="3_wpuaa"]
 [ext_resource type="Texture2D" uid="uid://blwyxb5seay3v" path="res://assets/nino_pobre.png" id="4_bew0i"]
 [ext_resource type="Texture2D" uid="uid://0wfivgoy73q2" path="res://assets/images/reyes/Hombre/rey_1.png" id="5_l0ppo"]
 [ext_resource type="Texture2D" uid="uid://bdbgdjgnk1pc7" path="res://assets/mujer_trabajadora.png" id="5_w8js2"]
@@ -22,6 +23,13 @@ size = Vector3(5, 0.25, 5.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nlvhg"]
 size = Vector3(18, 0.25, 5.5)
+
+[sub_resource type="Curve3D" id="Curve3D_l6s8d"]
+_data = {
+"points": PackedVector3Array(-46.37, 0, -37.845, -50, 0, -50, 0, 0, 0, 0, 0, 0, -0.865, 0, 0.95, 47.516, -5.45, -120.549),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wpuaa"]
 render_priority = 0
@@ -126,7 +134,20 @@ transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -0.44
 shape = SubResource("BoxShape3D_nlvhg")
 debug_color = Color(0.5564387, 0.3984954, 1, 0.41960785)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="CamPath3D" type="Path3D" parent="."]
+transform = Transform3D(0.63808274, 0, 0.76996785, 0, 1, 0, -0.76996785, 0, 0.63808274, 62.0105, 17.092184, 144.40764)
+curve = SubResource("Curve3D_l6s8d")
+
+[node name="CamPathFollow3D" type="PathFollow3D" parent="CamPath3D"]
+transform = Transform3D(0.7070999, 0, 0.7070955, 0, 0.9999982, 0, -0.7070998, 0, 0.7070956, 0, 0, 0)
+loop = false
+script = ExtResource("3_wpuaa")
+
+[node name="CamaraMovil" type="Camera3D" parent="CamPath3D/CamPathFollow3D"]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, 0, 0, 0)
+current = true
+
+[node name="CamaraFija" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, -0.535, 11.7, 29.9)
 
 [node name="CoinsLight" type="DirectionalLight3D" parent="."]
