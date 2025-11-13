@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://btktr20s07dol"]
+
+[ext_resource type="Texture2D" uid="uid://bqeeksjiuolcf" path="res://icon.svg" id="1_d28wd"]
+[ext_resource type="Texture2D" uid="uid://cm6j31x2l6fuw" path="res://assets/images/coin.png" id="2_d28wd"]
+
+[node name="CharacterBar" type="HBoxContainer"]
+offset_right = 84.0
+offset_bottom = 40.0
+
+[node name="HeadTexture" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_d28wd")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CoinContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CoinContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_d28wd")
+expand_mode = 3
+stretch_mode = 5

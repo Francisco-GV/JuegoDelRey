@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp8v3iw7e8mvt"]
+[gd_scene load_steps=6 format=3 uid="uid://cp8v3iw7e8mvt"]
 
 [ext_resource type="Theme" uid="uid://1vq51klrkaqv" path="res://themes/registro_theme.tres" id="1_8h833"]
 [ext_resource type="Script" uid="uid://dhlnwbypcoyof" path="res://escena_resultados.gd" id="1_h5dx2"]
 [ext_resource type="Texture2D" uid="uid://bq7kq3gfikdnl" path="res://assets/ui/bookstyles/travel/UI_TravelBook_Popup03a.png" id="3_fa02m"]
+[ext_resource type="PackedScene" uid="uid://btktr20s07dol" path="res://scenes/character_bar.tscn" id="3_qgvuw"]
+[ext_resource type="Texture2D" uid="uid://cm6j31x2l6fuw" path="res://assets/images/coin.png" id="4_qgvuw"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -15,6 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_8h833")
 script = ExtResource("1_h5dx2")
+character_bar_scene = ExtResource("3_qgvuw")
+coin_texture = ExtResource("4_qgvuw")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="EscenaResultados"]
 texture_filter = 1
@@ -36,19 +40,16 @@ axis_stretch_vertical = 2
 
 [node name="Label" type="Label" parent="EscenaResultados"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -213.0
-offset_top = -25.5
-offset_right = 213.0
-offset_bottom = 25.5
+offset_left = -274.5
+offset_top = 40.0
+offset_right = 274.5
+offset_bottom = 51.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 42
-text = "Resultados Guardados"
+text = "Resultados de última partida"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="EscenaResultados"]
@@ -61,9 +62,61 @@ anchor_bottom = 1.0
 offset_left = -4.0
 offset_top = -11.0
 offset_right = 4.0
-offset_bottom = -120.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Reiniciar"
+
+[node name="BarChart" type="Control" parent="EscenaResultados"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 120.0
+offset_right = -120.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GraphContainer" type="VBoxContainer" parent="EscenaResultados/BarChart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterBarTest1" parent="EscenaResultados/BarChart/GraphContainer" instance=ExtResource("3_qgvuw")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterBarTest2" parent="EscenaResultados/BarChart/GraphContainer" instance=ExtResource("3_qgvuw")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterBarTest3" parent="EscenaResultados/BarChart/GraphContainer" instance=ExtResource("3_qgvuw")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterBarTest4" parent="EscenaResultados/BarChart/GraphContainer" instance=ExtResource("3_qgvuw")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterBarTest5" parent="EscenaResultados/BarChart/GraphContainer" instance=ExtResource("3_qgvuw")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterBarTest6" parent="EscenaResultados/BarChart/GraphContainer" instance=ExtResource("3_qgvuw")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterBarTest7" parent="EscenaResultados/BarChart/GraphContainer" instance=ExtResource("3_qgvuw")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterBarTest8" parent="EscenaResultados/BarChart/GraphContainer" instance=ExtResource("3_qgvuw")]
+layout_mode = 2
+size_flags_vertical = 3
 
 [connection signal="pressed" from="EscenaResultados/Button" to="EscenaResultados" method="_on_button_pressed"]

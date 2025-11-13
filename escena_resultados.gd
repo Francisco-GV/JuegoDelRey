@@ -1,5 +1,9 @@
 extends Control
 
+@export var character_bar_scene: PackedScene
+@export var coin_texture: Texture2D
+
+@onready var graph_container = $BarChart/GraphContainer
 
 func _ready() -> void:
 	if not DB or DB.db == null:
@@ -39,6 +43,76 @@ func _ready() -> void:
 	print("Consulta de última partida ejecutada con éxito. Procesando datos...")
 	print(ultima_partida)
 
+	if ultima_partida.size() > 0:
+		var datos_partida: Dictionary = ultima_partida[0]
+
+		var datos_grafica: Dictionary = {
+			"rey": datos_partida["monedas_rey"],
+			"madre": datos_partida["monedas_madre"],
+			"anciano": datos_partida["monedas_anciano"],
+			"ninoPobre": datos_partida["monedas_nino_pobre"],
+			"mujerTrabajadora": datos_partida["monedas_mujer_trabajadora"],
+			"joven": datos_partida["monedas_joven"],
+			"ninoDiscapacitado": datos_partida["monedas_nino_discapacitado"],
+			"perro": datos_partida["monedas_perro"],
+		}
+
+		update_graph(datos_grafica)
+	else:
+		print("No se encontraron datos de partida.")
+		print("Usando datos de prueba para la gráfica.")
+		var datos_prueba: Dictionary = obtener_datos_prueba()
+		update_graph(datos_prueba)
+
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://registro.tscn")
+
+
+func update_graph(data: Dictionary):
+	# Limpiza de las barras anteriores
+	for child in graph_container.get_children():
+		child.queue_free()
+
+	for character_name in data:
+		var coin_count = data[character_name]
+
+		var bar_instance = character_bar_scene.instantiate()
+		bar_instance.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+		var head_texture_node = bar_instance.get_node("HeadTexture")
+		var head_texture = load("res://icon.svg")
+		head_texture_node.texture = head_texture
+
+		head_texture_node.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+		head_texture_node.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+
+		var coin_container_node = bar_instance.get_node("CoinContainer")
+
+		# Limpiza de monedas anteriores (Usadas de prueba en la escena)
+		for child in coin_container_node.get_children():
+			child.queue_free()
+
+		for i in coin_count:
+			var coin = TextureRect.new()
+			coin.texture = coin_texture
+			coin.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+			coin.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+			coin.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			coin_container_node.add_child(coin)
+
+		graph_container.add_child(bar_instance)
+
+
+func obtener_datos_prueba() -> Dictionary:
+	var rng = RandomNumberGenerator.new()
+	return {
+		"rey": rng.randi_range(1, 10),
+		"madre": rng.randi_range(1, 10),
+		"anciano": rng.randi_range(1, 10),
+		"ninoPobre": rng.randi_range(1, 10),
+		"mujerTrabajadora": rng.randi_range(1, 10),
+		"joven": rng.randi_range(1, 10),
+		"ninoDiscapacitado": rng.randi_range(1, 10),
+		"perro": rng.randi_range(1, 10),
+	}
