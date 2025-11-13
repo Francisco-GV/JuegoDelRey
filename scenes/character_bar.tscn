@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://btktr20s07dol"]
+[gd_scene load_steps=4 format=3 uid="uid://btktr20s07dol"]
 
 [ext_resource type="Texture2D" uid="uid://bqeeksjiuolcf" path="res://icon.svg" id="1_d28wd"]
 [ext_resource type="Texture2D" uid="uid://c0hvclwdnwwag" path="res://scenes/animations/coin_animation.tres" id="2_1eysa"]
+[ext_resource type="FontVariation" uid="uid://83gybuy2fg6h" path="res://themes/Fredoka-VariableFont.tres" id="3_1eysa"]
 
 [node name="CharacterBar" type="HBoxContainer"]
 offset_right = 84.0
@@ -22,3 +23,12 @@ layout_mode = 2
 texture = ExtResource("2_1eysa")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Counter" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_1eysa")
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 1

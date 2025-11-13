@@ -87,6 +87,10 @@ func update_graph(data: Dictionary):
 		head_texture_node.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 		head_texture_node.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 
+		var counter_node = bar_instance.get_node("Counter")
+
+		counter_node.text = str(coin_count)
+
 		var coin_container_node = bar_instance.get_node("CoinContainer")
 
 		# Limpiza de monedas anteriores (Usadas de prueba en la escena)
