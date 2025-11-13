@@ -65,11 +65,6 @@ func _ready() -> void:
 		update_graph(datos_prueba)
 
 
-func _on_button_pressed() -> void:
-	GameData.mostrar_escena_registro = true
-	get_tree().change_scene_to_file("res://scenes/inicio.tscn")
-
-
 func update_graph(data: Dictionary):
 	# Limpiza de las barras anteriores
 	for child in graph_container.get_children():
@@ -124,3 +119,12 @@ func obtener_datos_prueba() -> Dictionary:
 		"ninoDiscapacitado": rng.randi_range(1, 10),
 		"perro": rng.randi_range(1, 10),
 	}
+
+
+func _on_btn_inicio_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/inicio.tscn")
+
+
+func _on_btn_reiniciar_pressed() -> void:
+	GameData.mostrar_escena_registro = true
+	get_tree().change_scene_to_file("res://scenes/inicio.tscn")
