@@ -9,6 +9,7 @@ offset_right = 84.0
 offset_bottom = 40.0
 
 [node name="HeadTexture" type="TextureRect" parent="."]
+texture_filter = 6
 layout_mode = 2
 texture = ExtResource("1_d28wd")
 expand_mode = 3

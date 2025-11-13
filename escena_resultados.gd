@@ -81,7 +81,10 @@ func update_graph(data: Dictionary):
 		bar_instance.size_flags_vertical = Control.SIZE_EXPAND_FILL
 
 		var head_texture_node = bar_instance.get_node("HeadTexture")
-		var head_texture = load("res://icon.svg")
+		# Carga la textura de la cabeza del personaje,
+		# asumiendo que los archivos siguen el patrón "cabeza_<nombre>.png"
+		var head_texture_path = "res://assets/images/heads/cabeza_%s.png" % character_name
+		var head_texture = load(head_texture_path) as Texture2D
 		head_texture_node.texture = head_texture
 
 		head_texture_node.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
