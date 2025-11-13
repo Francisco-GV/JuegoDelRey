@@ -184,7 +184,7 @@ directional_shadow_max_distance = 400.0
 
 [node name="InsideLight" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.131222, 27.937378)
-light_energy = 16.0
+light_energy = 10.0
 light_cull_mask = 4294966273
 omni_range = 85.0
 omni_attenuation = 0.8
@@ -233,7 +233,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.598, 0, 126.286)
 mesh = SubResource("ArrayMesh_l6s8d")
 
 [node name="MeshYardFront" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.496506, -0.01, 148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.496506, 1.5675547, 148)
 material_override = SubResource("StandardMaterial3D_qoco5")
 mesh = SubResource("PlaneMesh_h1jj8")
 
