@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btktr20s07dol"]
 
 [ext_resource type="Texture2D" uid="uid://bqeeksjiuolcf" path="res://icon.svg" id="1_d28wd"]
-[ext_resource type="Texture2D" uid="uid://cm6j31x2l6fuw" path="res://assets/images/coin.png" id="2_d28wd"]
+[ext_resource type="Texture2D" uid="uid://c0hvclwdnwwag" path="res://scenes/animations/coin_animation.tres" id="2_1eysa"]
 
 [node name="CharacterBar" type="HBoxContainer"]
 offset_right = 84.0
@@ -19,6 +19,6 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="CoinContainer"]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_d28wd")
+texture = ExtResource("2_1eysa")
 expand_mode = 3
 stretch_mode = 5

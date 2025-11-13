@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dhlnwbypcoyof" path="res://escena_resultados.gd" id="1_h5dx2"]
 [ext_resource type="Texture2D" uid="uid://bq7kq3gfikdnl" path="res://assets/ui/bookstyles/travel/UI_TravelBook_Popup03a.png" id="3_fa02m"]
 [ext_resource type="PackedScene" uid="uid://btktr20s07dol" path="res://scenes/character_bar.tscn" id="3_qgvuw"]
-[ext_resource type="Texture2D" uid="uid://cm6j31x2l6fuw" path="res://assets/images/coin.png" id="4_qgvuw"]
+[ext_resource type="Texture2D" uid="uid://c0hvclwdnwwag" path="res://scenes/animations/coin_animation.tres" id="4_qgvuw"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 

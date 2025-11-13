@@ -1,0 +1,49 @@
+[gd_resource type="AnimatedTexture" load_steps=16 format=3 uid="uid://c0hvclwdnwwag"]
+
+[ext_resource type="Texture2D" uid="uid://b4r1s38jxijjf" path="res://assets/images/coin/coin-00.png" id="1_3vlot"]
+[ext_resource type="Texture2D" uid="uid://bssp8qkp2cdwh" path="res://assets/images/coin/coin-01.png" id="2_ivvlj"]
+[ext_resource type="Texture2D" uid="uid://dsppuol1f0nm3" path="res://assets/images/coin/coin-10.png" id="3_3riek"]
+[ext_resource type="Texture2D" uid="uid://b8voprwc8wsss" path="res://assets/images/coin/coin-11.png" id="4_om2x0"]
+[ext_resource type="Texture2D" uid="uid://dmgah0b7dxob6" path="res://assets/images/coin/coin-12.png" id="5_h2jax"]
+[ext_resource type="Texture2D" uid="uid://bxxm1nhm4ttky" path="res://assets/images/coin/coin-13.png" id="6_53sbm"]
+[ext_resource type="Texture2D" uid="uid://oagsp1wlamok" path="res://assets/images/coin/coin-14.png" id="7_qjaq5"]
+[ext_resource type="Texture2D" uid="uid://brcrnqgshgldh" path="res://assets/images/coin/coin-02.png" id="8_yarg1"]
+[ext_resource type="Texture2D" uid="uid://cghrv7mkydtxh" path="res://assets/images/coin/coin-03.png" id="9_11640"]
+[ext_resource type="Texture2D" uid="uid://cd1ohrnylwj0i" path="res://assets/images/coin/coin-04.png" id="10_8g7wg"]
+[ext_resource type="Texture2D" uid="uid://rlq5qovux4rs" path="res://assets/images/coin/coin-05.png" id="11_3dgv6"]
+[ext_resource type="Texture2D" uid="uid://bh3beantsik55" path="res://assets/images/coin/coin-06.png" id="12_x0kpn"]
+[ext_resource type="Texture2D" uid="uid://cnpbgcw0hkmoo" path="res://assets/images/coin/coin-07.png" id="13_fuey8"]
+[ext_resource type="Texture2D" uid="uid://p864471cn801" path="res://assets/images/coin/coin-08.png" id="14_uua2o"]
+[ext_resource type="Texture2D" uid="uid://6eoif2bsnk8f" path="res://assets/images/coin/coin-09.png" id="15_t6r5n"]
+
+[resource]
+frames = 15
+frame_0/texture = ExtResource("1_3vlot")
+frame_1/texture = ExtResource("2_ivvlj")
+frame_1/duration = 0.075
+frame_2/texture = ExtResource("8_yarg1")
+frame_2/duration = 0.075
+frame_3/texture = ExtResource("9_11640")
+frame_3/duration = 0.075
+frame_4/texture = ExtResource("10_8g7wg")
+frame_4/duration = 0.075
+frame_5/texture = ExtResource("11_3dgv6")
+frame_5/duration = 0.075
+frame_6/texture = ExtResource("12_x0kpn")
+frame_6/duration = 0.075
+frame_7/texture = ExtResource("13_fuey8")
+frame_7/duration = 0.075
+frame_8/texture = ExtResource("14_uua2o")
+frame_8/duration = 0.075
+frame_9/texture = ExtResource("15_t6r5n")
+frame_9/duration = 0.075
+frame_10/texture = ExtResource("3_3riek")
+frame_10/duration = 0.075
+frame_11/texture = ExtResource("4_om2x0")
+frame_11/duration = 0.075
+frame_12/texture = ExtResource("5_h2jax")
+frame_12/duration = 0.075
+frame_13/texture = ExtResource("6_53sbm")
+frame_13/duration = 0.075
+frame_14/texture = ExtResource("7_qjaq5")
+frame_14/duration = 0.075
