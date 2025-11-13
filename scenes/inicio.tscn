@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7m7sayt8l1qt"]
+[gd_scene load_steps=11 format=3 uid="uid://b7m7sayt8l1qt"]
 
 [ext_resource type="PackedScene" uid="uid://djxt3uu0e0te5" path="res://scenes/escenario.tscn" id="1_i3824"]
 [ext_resource type="FontFile" uid="uid://b2lioee1ml5yc" path="res://assets/fonts/Fredoka-VariableFont_wdth,wght.ttf" id="2_4vxdk"]
 [ext_resource type="FontVariation" uid="uid://biwuuru56eiwj" path="res://themes/fonts/variations/freedoka_inicio_titulo.tres" id="3_q3pj3"]
 [ext_resource type="FontFile" uid="uid://ubhlf2vvlwcx" path="res://themes/fonts/variations/freedoka_inicio_subtitulo.tres" id="4_oc22k"]
+[ext_resource type="Texture2D" uid="uid://c4ktswdgn3op7" path="res://assets/images/upg_logo.png" id="5_se2mk"]
 
 [sub_resource type="FontVariation" id="FontVariation_q3pj3"]
 base_font = ExtResource("2_4vxdk")
@@ -105,3 +106,21 @@ layout_mode = 2
 [node name="BtnSalir" type="Button" parent="CanvasLayer/Control/Botones"]
 layout_mode = 2
 text = "Salir"
+
+[node name="UpgLogo" type="TextureRect" parent="CanvasLayer/Control"]
+texture_filter = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -92.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_se2mk")
+expand_mode = 5
+stretch_mode = 5
