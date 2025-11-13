@@ -4,6 +4,7 @@ extends Control
 @export var coin_texture: Texture2D
 
 @onready var graph_container = $BarChart/GraphContainer
+@onready var lbl_participante: Label = $LabelParticipante
 
 func _ready() -> void:
 	if not DB or DB.db == null:
@@ -56,6 +57,12 @@ func _ready() -> void:
 			"ninoDiscapacitado": datos_partida["monedas_nino_discapacitado"],
 			"perro": datos_partida["monedas_perro"],
 		}
+
+		lbl_participante.text = "Participante: %s (Edad: %d, Género: %s)" % [
+			datos_partida["nombre"],
+			datos_partida["edad"],
+			datos_partida["genero"],
+		]
 
 		update_graph(datos_grafica)
 	else:

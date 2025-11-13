@@ -42,7 +42,7 @@ patch_margin_bottom = 4
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Label" type="Label" parent="EscenaResultados"]
+[node name="LblTitulo" type="Label" parent="EscenaResultados"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -54,6 +54,20 @@ offset_bottom = 51.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 42
 text = "Resultados de última partida"
+horizontal_alignment = 1
+
+[node name="LblParticipante" type="Label" parent="EscenaResultados"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -274.5
+offset_top = 90.0
+offset_right = 274.5
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Participante: <Nombre>"
 horizontal_alignment = 1
 
 [node name="BtnInicio" type="Button" parent="EscenaResultados"]
@@ -81,11 +95,10 @@ text = "Reiniciar"
 
 [node name="BarChart" type="Control" parent="EscenaResultados"]
 layout_mode = 1
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 120.0
-offset_top = 120.0
+offset_top = 160.0
 offset_right = -120.0
 offset_bottom = -120.0
 grow_horizontal = 2
@@ -131,5 +144,5 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[connection signal="pressed" from="EscenaResultados/BtnInicio" to="EscenaResultados" method="_on_button_pressed"]
-[connection signal="pressed" from="EscenaResultados/BtnReiniciar" to="EscenaResultados" method="_on_button_pressed"]
+[connection signal="pressed" from="EscenaResultados/BtnInicio" to="EscenaResultados" method="_on_btn_inicio_pressed"]
+[connection signal="pressed" from="EscenaResultados/BtnReiniciar" to="EscenaResultados" method="_on_btn_reiniciar_pressed"]
