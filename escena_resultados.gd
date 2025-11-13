@@ -66,7 +66,8 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://registro.tscn")
+	GameData.mostrar_escena_registro = true
+	get_tree().change_scene_to_file("res://scenes/inicio.tscn")
 
 
 func update_graph(data: Dictionary):
