@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7m7sayt8l1qt"]
+[gd_scene load_steps=12 format=3 uid="uid://b7m7sayt8l1qt"]
 
+[ext_resource type="Script" uid="uid://dx3te7mqgnss3" path="res://scripts/inicio.gd" id="1_4xtsl"]
 [ext_resource type="PackedScene" uid="uid://djxt3uu0e0te5" path="res://scenes/escenario.tscn" id="1_i3824"]
 [ext_resource type="FontFile" uid="uid://b2lioee1ml5yc" path="res://assets/fonts/Fredoka-VariableFont_wdth,wght.ttf" id="2_4vxdk"]
 [ext_resource type="FontVariation" uid="uid://biwuuru56eiwj" path="res://themes/fonts/variations/freedoka_inicio_titulo.tres" id="3_q3pj3"]
@@ -37,15 +38,16 @@ shadow_size = 24
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="Inicio" type="Node3D"]
+script = ExtResource("1_4xtsl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.63808274, 0, 0.76996785, 0, 1, 0, -0.76996785, 0, 0.63808274, 62.0105, 17.092184, 144.40764)
 
 [node name="Escenario" parent="." instance=ExtResource("1_i3824")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayerInicio" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayerInicio"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_i3824")
 
-[node name="Titulo" type="Label" parent="CanvasLayer/Control"]
+[node name="Titulo" type="Label" parent="CanvasLayerInicio/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -69,7 +71,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="Subtitulo" type="Label" parent="CanvasLayer/Control/Titulo"]
+[node name="Subtitulo" type="Label" parent="CanvasLayerInicio/Control/Titulo"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -83,7 +85,7 @@ pivot_offset = Vector2(8.4, 0)
 text = "Un experimento Interactivo"
 label_settings = SubResource("LabelSettings_se2mk")
 
-[node name="Botones" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="Botones" type="VBoxContainer" parent="CanvasLayerInicio/Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.33
@@ -96,18 +98,18 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="BtnIniciar" type="Button" parent="CanvasLayer/Control/Botones"]
+[node name="BtnIniciar" type="Button" parent="CanvasLayerInicio/Control/Botones"]
 layout_mode = 2
 text = "Iniciar Juego"
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/Botones"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayerInicio/Control/Botones"]
 layout_mode = 2
 
-[node name="BtnSalir" type="Button" parent="CanvasLayer/Control/Botones"]
+[node name="BtnSalir" type="Button" parent="CanvasLayerInicio/Control/Botones"]
 layout_mode = 2
 text = "Salir"
 
-[node name="UpgLogo" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="UpgLogo" type="TextureRect" parent="CanvasLayerInicio/Control"]
 texture_filter = 6
 layout_mode = 1
 anchors_preset = -1
@@ -124,3 +126,6 @@ grow_vertical = 0
 texture = ExtResource("5_se2mk")
 expand_mode = 5
 stretch_mode = 5
+
+[connection signal="pressed" from="CanvasLayerInicio/Control/Botones/BtnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="CanvasLayerInicio/Control/Botones/BtnSalir" to="." method="_on_btn_salir_pressed"]
